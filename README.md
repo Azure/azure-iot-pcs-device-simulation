@@ -1,14 +1,53 @@
+[![Build][build-badge]][build-url]
+[![Issues][issues-badge]][issues-url]
+[![Gitter][gitter-badge]][gitter-url]
 
-# Contributing
+IoT Simulation preconfigured solution
+=====================================
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
+Overview
+========
 
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+...
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+Getting Started
+===============
+
+...
+
+Common Scenarios
+================
+
+...
+
+Architecture Overview
+=====================
+
+...
+
+How-to and Troubleshooting Resources
+====================================
+
+...
+
+Feedback
+========
+
+...
+
+Contributing
+============
+Refer to our [contribution guidelines](docs/CONTRIBUTING.md)
+
+License
+=======
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Licensed under the [MIT](LICENSE) License.
+
+[build-badge]: https://img.shields.io/travis/Azure/azure-iot-pcs-simulation.svg
+[build-url]: https://travis-ci.org/Azure/azure-iot-pcs-simulation
+[issues-badge]: https://img.shields.io/github/issues/azure/azure-iot-pcs-simulation.svg
+[issues-url]: https://github.com/azure/azure-iot-pcs-simulation/issues
+[gitter-badge]: https://img.shields.io/gitter/room/azure/iot-solutions.js.svg
+[gitter-url]: https://gitter.im/Azure/iot-solutions
