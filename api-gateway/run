@@ -1,0 +1,8 @@
+#!/usr/bin/env bash -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/simulation-api-gateway:testing"
+PORT=10080
+
+echo Using port $PORT...
+docker run -it -p $PORT:80 $DOCKER_IMAGE
