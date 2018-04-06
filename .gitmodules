@@ -7,3 +7,6 @@
 [submodule "webui"]
 	path = webui
 	url = git@github.com:Azure/pcs-simulation-webui.git
+[submodule "pcs-diagnostics"]
+	path = pcs-diagnostics-dotnet
+	url = git@github.com:Azure/pcs-diagnostics-dotnet.git
