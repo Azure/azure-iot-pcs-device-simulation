@@ -10,3 +10,12 @@
 [submodule "pcs-diagnostics"]
 	path = pcs-diagnostics-dotnet
 	url = git@github.com:Azure/pcs-diagnostics-dotnet.git
+[submodule "iothub-manager"]
+	path = iothub-manager-dotnet
+	url = https://github.com/Azure/iothub-manager-dotnet.git
+[submodule "pcs-cli"]
+	path = pcs-cli
+	url = https://github.com/Azure/pcs-cli.git
+[submodule "device-telemetry"]
+	path = device-telemetry-dotnet
+	url = https://github.com/Azure/device-telemetry-dotnet.git
