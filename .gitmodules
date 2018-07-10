@@ -10,3 +10,7 @@
 [submodule "pcs-diagnostics"]
 	path = pcs-diagnostics-dotnet
 	url = git@github.com:Azure/pcs-diagnostics-dotnet.git
+[submodule "pcs-config-dotnet"]
+	path = pcs-config-dotnet
+	url = https://github.com/Azure/pcs-config-dotnet.git
+	branch = RemoveServiceDependency
