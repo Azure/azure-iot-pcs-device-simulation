@@ -128,7 +128,7 @@ tag_build_publish_repo() {
         echo
 
         BUILD_PATH="scripts/docker/build"
-        if [ "$SUB_MODULE" == "reverse-proxy" ]; then 
+        if [ "$SUB_MODULE" == "api-gateway" ]; then 
             BUILD_PATH="build"
         fi
 
