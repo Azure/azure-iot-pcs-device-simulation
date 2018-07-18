@@ -7,10 +7,10 @@
 [submodule "webui"]
 	path = webui
 	url = git@github.com:Azure/pcs-simulation-webui.git
-[submodule "diagnostics-service"]
-	path = diagnostics-service
+[submodule "pcs-diagnostics-dotnet"]
+	path = pcs-diagnostics-dotnet
 	url = git@github.com:Azure/pcs-diagnostics-dotnet.git
-[submodule "config-service"]
-	path = config-service
+[submodule "pcs-config-dotnet"]
+	path = pcs-config-dotnet
 	url = https://github.com/Azure/pcs-config-dotnet.git
 	branch = RemoveServiceDependency
