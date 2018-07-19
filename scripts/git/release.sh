@@ -27,7 +27,7 @@ DESCRIPTION=${DESCRIPTION:-''}
 PRE_RELEASE=${PRE_RELEASE:-false}
 LOCAL=${LOCAL:-''}
 
-APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )/"
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
 
 NC="\033[0m" # no color
 CYAN="\033[1;36m" # light cyan
