@@ -62,15 +62,15 @@ check_input() {
     if [ ! -n "$VERSION" ]; then
         usage "version"
     fi
-    if [ ! -n "$GIT_ACCESS_TOKEN" ]; then
-        usage "git_access_token"
-    fi
+#    if [ ! -n "$GIT_ACCESS_TOKEN" ]; then
+#        usage "git_access_token"
+#    fi
     if [ ! -n "$DOCKER_USER" ]; then
         usage "docker_user"
     fi
-    if [ ! -n "$DOCKER_PWD" ]; then
-        usage "docker_pwd"
-    fi
+#    if [ ! -n "$DOCKER_PWD" ]; then
+#        usage "docker_pwd"
+#    fi
     echo $DOCKER_PWD | docker login -u $DOCKER_USER --password-stdin
 }
 
