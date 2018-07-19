@@ -6,14 +6,14 @@ set -e
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --version)                      VERSION="$2" ;;
-        --git-access-token)             GIT_ACCESS_TOKEN="$2" ;;
-        --docker-user)                  DOCKER_USER="$2" ;;
-        --docker-pwd)                   DOCKER_PWD="$2" ;;
-        --from-docker-namespace)        FROM_DOCKER_NAMESPACE="$2" ;;
-        --to-docker-namespace)          TO_DOCKER_NAMESPACE="$2" ;;
-        --docker-tag)                   DOCKER_TAG="$2" ;;
+        --git_access_token)             GIT_ACCESS_TOKEN="$2" ;;
+        --docker_user)                  DOCKER_USER="$2" ;;
+        --docker_pwd)                   DOCKER_PWD="$2" ;;
+        --from_docker_namespace)        FROM_DOCKER_NAMESPACE="$2" ;;
+        --to_docker_namespace)          TO_DOCKER_NAMESPACE="$2" ;;
+        --docker_tag)                   DOCKER_TAG="$2" ;;
         --description)                  DESCRIPTION="$2" ;;
-        --pre-release)                  PRE_RELEASE="$2" ;;
+        --pre_release)                  PRE_RELEASE="$2" ;;
         --local)                        LOCAL="$2" ;;
     esac
     shift
@@ -27,7 +27,7 @@ DESCRIPTION=${DESCRIPTION:-''}
 PRE_RELEASE=${PRE_RELEASE:-false}
 LOCAL=${LOCAL:-''}
 
-APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )/"
 
 NC="\033[0m" # no color
 CYAN="\033[1;36m" # light cyan
@@ -45,14 +45,14 @@ usage() {
     echo "Usage: ./release"
     echo -e 'Options:
         --version               Version of this release (required)
-        --git-access-token      Git access token to push tag (required)
-        --docker-user           Username to login docker hub (required)
-        --docker-pwd            Password to login docker hub (required)
-        --from-docker-namespace Source namespace of docker image (default:azureiotpcs)
-        --to-docker-namespace   Target namespace of docker image (default:azureiotpcs)
-        --docker-tag            Source tag of docker image (default:testing)
+        --git_access_token      Git access token to push tag (required)
+        --docker_user           Username to login docker hub (required)
+        --docker_pwd            Password to login docker hub (required)
+        --from_docker_namespace Source namespace of docker image (default:azureiotpcs)
+        --to_docker_namespace   Target namespace of docker image (default:azureiotpcs)
+        --docker_tag            Source tag of docker image (default:testing)
         --description           Description of this release (default:empty)
-        --pre-release           Publish as non-production release on github (default:false)
+        --pre_release           Publish as non-production release on github (default:false)
         --local                 Clean up the local repo at first (default:empty)
         '
     exit 1
@@ -62,15 +62,15 @@ check_input() {
     if [ ! -n "$VERSION" ]; then
         usage "version"
     fi
-    if [ ! -n "$GIT_ACCESS_TOKEN" ]; then
-        usage "git-access-token"
-    fi
+#    if [ ! -n "$GIT_ACCESS_TOKEN" ]; then
+#        usage "git_access_token"
+#    fi
     if [ ! -n "$DOCKER_USER" ]; then
-        usage "docker-user"
+        usage "docker_user"
     fi
-    if [ ! -n "$DOCKER_PWD" ]; then
-        usage "docker-pwd"
-    fi
+#    if [ ! -n "$DOCKER_PWD" ]; then
+#        usage "docker_pwd"
+#    fi
     echo $DOCKER_PWD | docker login -u $DOCKER_USER --password-stdin
 }
 
@@ -133,6 +133,8 @@ tag_build_publish_repo() {
         fi
 
         # Building docker containers
+        echo "Building docker containers"
+        echo $APP_HOME$SUB_MODULE/$BUILD_PATH
         /bin/bash $APP_HOME$SUB_MODULE/$BUILD_PATH
 
         echo
@@ -153,11 +155,11 @@ tag_build_publish_repo() {
 check_input
 
 # DOTNET Microservices
-tag_build_publish_repo config-service      pcs-config-dotnet
-tag_build_publish_repo simulation-service  device-simulation-dotnet
-tag_build_publish_repo diagnostics-service pcs-diagnostics-dotnet
-tag_build_publish_repo storage-service     pcs-storage-adapter-dotnet
-tag_build_publish_repo webui               pcs-simulation-webui
-tag_build_publish_repo api-gateway         azure-iot-pcs-device-simulation simulation-api-gateway
+tag_build_publish_repo simulation-service     device-simulation-dotnet
+tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
+tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
+tag_build_publish_repo webui                  pcs-simulation-webui
+tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
+tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation simulation-api-gateway
 
 set +e
