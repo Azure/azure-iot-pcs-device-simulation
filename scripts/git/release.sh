@@ -5,7 +5,7 @@ set -e
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
-        --version)                      VERSION="$2" ;;
+        --release_version)              RELEASE_VERSION="$2" ;;
         --git_access_token)             GIT_ACCESS_TOKEN="$2" ;;
         --docker_user)                  DOCKER_USER="$2" ;;
         --docker_pwd)                   DOCKER_PWD="$2" ;;
@@ -44,7 +44,7 @@ usage() {
     echo -e "${RED}ERROR: $1 is a required option${NC}"
     echo "Usage: ./release"
     echo -e 'Options:
-        --version               Version of this release (required)
+        --release_version       Version of this release (required)
         --git_access_token      Git access token to push tag (required)
         --docker_user           Username to login docker hub (required)
         --docker_pwd            Password to login docker hub (required)
@@ -59,8 +59,8 @@ usage() {
 }
 
 check_input() {
-    if [ ! -n "$VERSION" ]; then
-        usage "version"
+    if [ ! -n "$RELEASE_VERSION" ]; then
+        usage "release_version"
     fi
     if [ ! -n "$DOCKER_USER" ]; then
         usage "docker_user"
@@ -95,10 +95,10 @@ tag_build_publish_repo() {
     git pull --all --prune
 
     echo "git tag"
-    git tag --force $VERSION
+    git tag --force $RELEASE_VERSION
 
     echo "git push"
-    git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $VERSION
+    git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $RELEASE_VERSION
 
     echo
     echo -e "${CYAN}====================================     End: Tagging $REPO_NAME repo     ====================================${NC}"
@@ -110,9 +110,9 @@ tag_build_publish_repo() {
 
     # For documentation https://help.github.com/articles/creating-releases/
     DATA="{
-        \"tag_name\": \"$VERSION\",
+        \"tag_name\": \"$RELEASE_VERSION\",
         \"target_commitish\": \"master\",
-        \"name\": \"$VERSION\",
+        \"name\": \"$RELEASE_VERSION\",
         \"body\": \"$DESCRIPTION\",
         \"draft\": false,
         \"prerelease\": $PRE_RELEASE
@@ -143,13 +143,13 @@ tag_build_publish_repo() {
         echo
         
         # Tag containers
-        echo -e "${CYAN}Tagging $FROM_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$DOCKER_TAG ==> $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$VERSION${NC}"
+        echo -e "${CYAN}Tagging $FROM_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$DOCKER_TAG ==> $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$RELEASE_VERSION${NC}"
         echo
-        docker tag $FROM_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$DOCKER_TAG  $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$VERSION
+        docker tag $FROM_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$DOCKER_TAG  $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$RELEASE_VERSION
 
         # Push containers
-        echo -e "${CYAN}Pusing container $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$VERSION${NC}"
-        docker push $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$VERSION
+        echo -e "${CYAN}Pusing container $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$RELEASE_VERSION${NC}"
+        docker push $TO_DOCKER_NAMESPACE/$DOCKER_CONTAINER_NAME:$RELEASE_VERSION
     fi
 }
 
