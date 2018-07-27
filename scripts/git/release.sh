@@ -95,7 +95,7 @@ tag_build_publish_repo() {
     git checkout master
 
     echo "set url"
-    git set-url origin https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git
+    git remote set-url origin https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git
 
     echo "git pull"
     git pull --all --prune
