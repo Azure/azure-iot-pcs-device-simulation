@@ -93,8 +93,12 @@ tag_build_publish_repo() {
         git clean -xdf
     fi
     git checkout master
+
+    echo "set url"
+    git set-url origin https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git
+
     echo "git pull"
-    git pull https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --all --prune
+    git pull --all --prune
    # echo "git fetch"
    # git fetch https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --tags
 
