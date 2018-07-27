@@ -93,10 +93,14 @@ tag_build_publish_repo() {
         git clean -xdf
     fi
     git checkout master
-    git pull --all --prune
+    echo "git pull"
+    git pull https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --all --prune
+    echo "git fetch"
     git fetch https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --tags
 
+    echo "git tag"
     git tag https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --force $VERSION
+    echi "git push"
     git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $VERSION
 
     echo
@@ -158,7 +162,7 @@ check_input
 # tag_build_publish_repo simulation-service     device-simulation-dotnet
 # tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
 # tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
- tag_build_publish_repo webui                  pcs-simulation-webui
+tag_build_publish_repo webui                  pcs-simulation-webui
 # tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
 # tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation simulation-api-gateway
 
