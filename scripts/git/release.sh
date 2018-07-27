@@ -95,8 +95,8 @@ tag_build_publish_repo() {
     git checkout master
     echo "git pull"
     git pull https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --all --prune
-    echo "git fetch"
-    git fetch https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --tags
+   # echo "git fetch"
+   # git fetch https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --tags
 
     echo "git tag"
     git tag https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --force $VERSION
