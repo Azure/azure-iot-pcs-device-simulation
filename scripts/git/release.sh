@@ -94,9 +94,9 @@ tag_build_publish_repo() {
     fi
     git checkout master
     git pull --all --prune
-    git fetch --tags
+    git fetch https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --tags
 
-    git tag --force $VERSION
+    git tag https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --force $VERSION
     git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $VERSION
 
     echo
@@ -155,10 +155,10 @@ tag_build_publish_repo() {
 check_input
 
 # DOTNET Microservices
-tag_build_publish_repo simulation-service     device-simulation-dotnet
+# tag_build_publish_repo simulation-service     device-simulation-dotnet
 # tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
 # tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
-# tag_build_publish_repo webui                  pcs-simulation-webui
+ tag_build_publish_repo webui                  pcs-simulation-webui
 # tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
 # tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation simulation-api-gateway
 
