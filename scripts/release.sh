@@ -27,7 +27,7 @@ DESCRIPTION=${DESCRIPTION:-''}
 PRE_RELEASE=${PRE_RELEASE:-false}
 LOCAL=${LOCAL:-''}
 
-APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )/"
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
 
 NC="\033[0m" # no color
 CYAN="\033[1;36m" # light cyan
@@ -62,15 +62,9 @@ check_input() {
     if [ ! -n "$VERSION" ]; then
         usage "version"
     fi
-#    if [ ! -n "$GIT_ACCESS_TOKEN" ]; then
-#        usage "git_access_token"
-#    fi
     if [ ! -n "$DOCKER_USER" ]; then
         usage "docker_user"
     fi
-#    if [ ! -n "$DOCKER_PWD" ]; then
-#        usage "docker_pwd"
-#    fi
     echo $DOCKER_PWD | docker login -u $DOCKER_USER --password-stdin
 }
 
@@ -93,10 +87,17 @@ tag_build_publish_repo() {
         git clean -xdf
     fi
     git checkout master
-    git pull --all --prune
-    git fetch --tags
 
+    echo "set url"
+    git remote set-url origin https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git
+
+    echo "git pull"
+    git pull --all --prune
+
+    echo "git tag"
     git tag --force $VERSION
+
+    echo "git push"
     git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $VERSION
 
     echo
@@ -133,6 +134,8 @@ tag_build_publish_repo() {
         fi
 
         # Building docker containers
+        echo "Building docker containers"
+        echo $APP_HOME$SUB_MODULE/$BUILD_PATH
         /bin/bash $APP_HOME$SUB_MODULE/$BUILD_PATH
 
         echo
@@ -154,10 +157,10 @@ check_input
 
 # DOTNET Microservices
 tag_build_publish_repo simulation-service     device-simulation-dotnet
-tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
+tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet            diagnostics-dotnet
 tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
-tag_build_publish_repo webui                  pcs-simulation-webui
+tag_build_publish_repo webui                  pcs-simulation-webui              device-simulation-webui
 tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
-tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation simulation-api-gateway
+tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation   simulation-api-gateway
 
 set +e
