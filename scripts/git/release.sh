@@ -103,7 +103,7 @@ tag_build_publish_repo() {
    # git fetch https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --tags
 
     echo "git tag"
-    git tag https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --force $VERSION
+    git tag --force $VERSION
     echi "git push"
     git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $VERSION
 
