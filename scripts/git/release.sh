@@ -99,13 +99,12 @@ tag_build_publish_repo() {
 
     echo "git pull"
     git pull --all --prune
-   # echo "git fetch"
-   # git fetch https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git --tags
 
     echo "git tag"
     git tag --force $VERSION
-    echi "git push"
-    git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $VERSION
+
+    echo "git push"
+    git push  $VERSION
 
     echo
     echo -e "${CYAN}====================================     End: Tagging $REPO_NAME repo     ====================================${NC}"
