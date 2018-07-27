@@ -77,7 +77,7 @@ check_input() {
 tag_build_publish_repo() {
     SUB_MODULE=$1
     REPO_NAME=$2
-    DOCKER_CONTAINER_NAME=${3}
+    DOCKER_CONTAINER_NAME=${3:-$2}
     DESCRIPTION=$4
 
     echo
