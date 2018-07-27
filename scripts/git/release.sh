@@ -92,7 +92,7 @@ tag_build_publish_repo() {
         git reset --hard origin/master
         git clean -xdf
     fi
-    git checkout master
+    git checkout release-test
 
     echo "set url"
     git remote set-url origin https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git
