@@ -86,7 +86,12 @@ tag_build_publish_repo() {
         git reset --hard origin/master
         git clean -xdf
     fi
-    git checkout master
+
+    if [ "$REPO_NAME" == "pcs-config-dotnet" ]; then
+        git checkout RemoveServiceDependency
+    else
+        git checkout master
+    fi
 
     echo "set url"
     git remote set-url origin https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git
