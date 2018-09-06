@@ -36,7 +36,7 @@ tag_build_publish_repo() {
     DESCRIPTION=$4
 
     echo
-    echo -e "${CYAN}====================================     Start: Pull $REPO_NAME repo     ====================================${NC}"
+    echo -e "${CYAN}====================================     Start: Pull $SUB_MODULE repo     ====================================${NC}"
     echo
     echo -e "Current working directory ${CYAN}$APP_HOME$SUB_MODULE${NC}"
     echo
@@ -51,20 +51,20 @@ tag_build_publish_repo() {
     git pull --all --prune
 
     echo
-    echo -e "${CYAN}====================================     End: Pull $REPO_NAME repo     ====================================${NC}"
+    echo -e "${CYAN}====================================     End: Pull $SUB_MODULE repo     ====================================${NC}"
     echo
 
     echo
-    echo -e "${CYAN}====================================     Start: Release for $REPO_NAME     ====================================${NC}"
+    echo -e "${CYAN}====================================     Start: Release for $SUB_MODULE    ====================================${NC}"
     echo
 
     # For documentation https://help.github.com/articles/creating-releases/
     echo
-    echo -e "${CYAN}====================================     End: Release for $REPO_NAME     ====================================${NC}"
+    echo -e "${CYAN}====================================     End: Release for $SUB_MODULE     ====================================${NC}"
     echo
 
     echo
-    echo -e "${CYAN}====================================     Start: Building $REPO_NAME     ====================================${NC}"
+    echo -e "${CYAN}====================================     Start: Building $SUB_MODULE     ====================================${NC}"
     echo
 
     BUILD_PATH="build"
@@ -78,7 +78,7 @@ tag_build_publish_repo() {
     /bin/bash $APP_HOME$SUB_MODULE/$BUILD_PATH
 
     echo
-    echo -e "${CYAN}====================================     End: Building $REPO_NAME     ====================================${NC}"
+    echo -e "${CYAN}====================================     End: Building $SUB_MODULE     ====================================${NC}"
     echo
 }
 
