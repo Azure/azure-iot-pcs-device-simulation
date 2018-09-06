@@ -100,10 +100,10 @@ tag_build_publish_repo() {
     git pull --all --prune
 
     echo "git tag"
-    git tag --force $RELEASE_VERSION
+    # git tag --force $RELEASE_VERSION
 
     echo "git push"
-    git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $RELEASE_VERSION
+    # git push https://$GIT_ACCESS_TOKEN@github.com/Azure/$REPO_NAME.git $RELEASE_VERSION
 
     echo
     echo -e "${CYAN}====================================     End: Tagging $REPO_NAME repo     ====================================${NC}"
@@ -161,11 +161,11 @@ tag_build_publish_repo() {
 check_input
 
 # DOTNET Microservices
-tag_build_publish_repo simulation-service     device-simulation-dotnet
-tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
-tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
-tag_build_publish_repo webui                  pcs-simulation-webui              device-simulation-webui
-tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
+# tag_build_publish_repo simulation-service     device-simulation-dotnet
+# tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
+# tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
+# tag_build_publish_repo webui                  pcs-simulation-webui              device-simulation-webui
+# tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
 tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation   simulation-api-gateway
 
 set +e
