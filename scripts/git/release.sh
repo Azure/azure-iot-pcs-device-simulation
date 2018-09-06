@@ -82,8 +82,6 @@ tag_build_publish_repo() {
     echo
 }
 
-check_input
-
 # DOTNET Microservices
 tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation   simulation-api-gateway
 
