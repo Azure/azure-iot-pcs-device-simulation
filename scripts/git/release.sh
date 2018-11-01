@@ -163,9 +163,9 @@ check_input
 # DOTNET Microservices
 tag_build_publish_repo simulation-service     device-simulation-dotnet
 tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
-tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
+# tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
 tag_build_publish_repo webui                  pcs-simulation-webui              device-simulation-webui
-tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
+# tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
 tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation   simulation-api-gateway
 
 set +e
