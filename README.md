@@ -24,7 +24,7 @@ Get up and running instantly by using sample devices and sample simulations when
 Common Scenarios
 ================
 
-1.	**Load Testing** – Customers will be able to perform large scale tests using Device Simulation. Individual simulations will support up to 2 million simulated devices. The simulation environment will auto scale up to add additional VMs as needed to support large scale simulations and then scale back down when done to control costs.
+1.	**Load Testing** – Customers will be able to perform large scale tests using Device Simulation. Individual simulations will support up to 20,000 simulated devices. 
 2.	**IoT Demos** – Device Simulation now includes sample simulations that can be started with a click. This allows for instant demos showcasing device data flowing to an IoT Hub.
 3.	**Simple POCs** – This scenario was supported in the initial release of Device Simulation. However, there are more capabilities here. Customers can create device models and re-use them for easily repeatable simulations. Individual simulations can also now support a mix of multiple device types.
 4.	**Advanced device behaviors** – Customers will be able to write custom JSON device definition files and script device behaviors using JavaScript. This allows for very complex scenarios allowing a device to mimic the behavior of the real thing (e.g. vehicles following roads, interior temperature varying based on exterior temperature, etc.)
