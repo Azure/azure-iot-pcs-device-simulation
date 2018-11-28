@@ -30,6 +30,9 @@ Common Scenarios
 4.	**Advanced device behaviors** – Customers will be able to write custom JSON device definition files and script device behaviors using JavaScript. This allows for very complex scenarios allowing a device to mimic the behavior of the real thing (e.g. vehicles following roads, interior temperature varying based on exterior temperature, etc.)
 5.	**Simulation-driven development** – Customers can use Device Simulation to generate both expected and unexpected telemetry for continuous testing while developing their solution on top of Azure IoT.
 
+Getting Started
+===============
+The best way to get started and learn how this project works is to deploy it to your Azure subscription. Get started with the [Quickstart tutorial](https://docs.microsoft.com/en-us/azure/iot-accelerators/quickstart-device-simulation-deploy).
 
 Project Structure
 =====================
