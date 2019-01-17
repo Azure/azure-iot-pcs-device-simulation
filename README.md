@@ -40,11 +40,11 @@ Project Structure
 The solution contains the following projects and folders:
 -	**WebService:** ASP.NET Web API exposing a RESTful API for Simulation functionality, e.g. start, stop, add devices, etc. This is also the service entry point, starting all the main threads.
 
-- **pcs-config-dotnet**  Configuraiton Library used to create and store configuration settings specific to your deployment
+- **pcs-config-dotnet**  Configuration Library used to create and store configuration settings specific to your deployment
 - **pcs-diagnostics-dotnet** Diagnostics Library used to Collect metrics on how the application is used and optionally send this data to Microsoft.
 -	**scripts:** a folder containing scripts for the command line console, to build and run the solution, and other frequent tasks.
 - **simulation-service** Microservice that manages all simulations
-- **storage-service** Microservice that allows management of key-values abstracting the storage semantic and store data of any format using Azure Cosmos DM
+- **storage-service** Microservice that allows management of key-values abstracting the storage semantic and store data of any format using Azure CosmosDB
 - **webui** The web user interface for Device Simulation. The service provides a RESTful endpoint to configure the simulation details, to start and stop the simulation, to add and remove virtual devices, and more.
 
 Other Resources
