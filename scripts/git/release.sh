@@ -161,11 +161,14 @@ tag_build_publish_repo() {
 check_input
 
 # DOTNET Microservices
+# As of DS-2.0.6, only the Web UI and the Simulation service containers are
+# refrenced by a new docker tag for each release (in docker-compse.yaml in the
+# deployed VMs)
 tag_build_publish_repo simulation-service     device-simulation-dotnet
-tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
-tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
 tag_build_publish_repo webui                  pcs-simulation-webui              device-simulation-webui
-tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
-tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation   simulation-api-gateway
+#tag_build_publish_repo pcs-diagnostics-dotnet pcs-diagnostics-dotnet
+#tag_build_publish_repo storage-service        pcs-storage-adapter-dotnet
+#tag_build_publish_repo pcs-config-dotnet      pcs-config-dotnet
+#tag_build_publish_repo api-gateway            azure-iot-pcs-device-simulation   simulation-api-gateway
 
 set +e
