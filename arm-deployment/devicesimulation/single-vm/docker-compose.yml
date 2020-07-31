@@ -91,7 +91,7 @@ services:
 #     - /app/custom-device-simulation-appsettings.ini:/app/webservice/appsettings.ini:ro
 
   storageadapter-svc:
-    image: azureiotpcs/pcs-storage-adapter-dotnet:DS-1.0.2
+    image: azureiotpcs/pcs-storage-adapter-dotnet:DS-2.0.8
     restart: always
     environment:
       - PCS_LOG_LEVEL
@@ -107,7 +107,7 @@ services:
         max-file: "10"
 
   diagnostics-svc:
-    image: azureiotpcs/pcs-diagnostics-dotnet:Diagnostics-2.0.1
+    image: azureiotpcs/pcs-diagnostics-dotnet:DS-2.0.8
     restart: always
     depends_on:
       - config-svc
@@ -132,7 +132,7 @@ services:
         max-file: "10"
 
   config-svc:
-    image: azureiotpcs/pcs-config-dotnet:DS-1.0.2
+    image: azureiotpcs/pcs-config-dotnet:DS-2.0.8
     restart: always
     depends_on:
       - storageadapter-svc
@@ -143,6 +143,7 @@ services:
       - PCS_AUTH_ISSUER
       - PCS_AUTH_AUDIENCE
       - PCS_AUTH_REQUIRED
+      - PCS_AZUREMAPS_KEY=static
       - PCS_CORS_WHITELIST
       - PCS_APPLICATION_SECRET
       - PCS_DEVICESIMULATION_WEBSERVICE_URL
