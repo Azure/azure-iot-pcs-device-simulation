@@ -35,7 +35,7 @@ services:
         max-file: "10"
 
   webui-svc:
-    image: azureiotpcs/device-simulation-webui:${PCS_DOCKER_TAG}
+    image: azureiotpcs/device-simulation-webui:DS-2.0.6
     restart: always
     depends_on:
       - devicesimulation-svc
