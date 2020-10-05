@@ -4,14 +4,14 @@
     "parameters": {
       "pcsDockerTag": {
         "type": "string",
-        "defaultValue": "DS-2.0.6",
+        "defaultValue": "DS-2.0.9",
         "metadata": {
           "description": "The docker tag can be same as release version and is the latest released docker image"
         }
       },
       "pcsReleaseVersion": {
         "type": "string",
-        "defaultValue": "DS-2.0.6",
+        "defaultValue": "DS-2.0.9",
         "metadata": {
           "description": "The release version is used for repoURL for reverse-proxy-dotnet and vmScriptUri"
         }
