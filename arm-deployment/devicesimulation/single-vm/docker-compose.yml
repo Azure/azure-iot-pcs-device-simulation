@@ -35,7 +35,7 @@ services:
         max-file: "10"
 
   webui-svc:
-    image: azureiotpcs/device-simulation-webui:DS-2.0.6
+    image: azureiotpcs/device-simulation-webui:DS-2.0.9
     restart: always
     depends_on:
       - devicesimulation-svc
@@ -91,7 +91,7 @@ services:
 #     - /app/custom-device-simulation-appsettings.ini:/app/webservice/appsettings.ini:ro
 
   storageadapter-svc:
-    image: azureiotpcs/pcs-storage-adapter-dotnet:DS-2.0.8
+    image: azureiotpcs/pcs-storage-adapter-dotnet:DS-2.0.9
     restart: always
     environment:
       - PCS_LOG_LEVEL
@@ -107,7 +107,7 @@ services:
         max-file: "10"
 
   diagnostics-svc:
-    image: azureiotpcs/pcs-diagnostics-dotnet:DS-2.0.8
+    image: azureiotpcs/pcs-diagnostics-dotnet:DS-2.0.9
     restart: always
     depends_on:
       - config-svc
@@ -132,7 +132,7 @@ services:
         max-file: "10"
 
   config-svc:
-    image: azureiotpcs/pcs-config-dotnet:DS-2.0.8
+    image: azureiotpcs/pcs-config-dotnet:DS-2.0.9
     restart: always
     depends_on:
       - storageadapter-svc
