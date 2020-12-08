@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "nmp run build && node ./dist/deploy.js",
+    "deploy": "npm run build && node ./dist/deploy.js",
     "build": "tsc",
     "lint": "eslint . --ext .ts --fix"
   },
