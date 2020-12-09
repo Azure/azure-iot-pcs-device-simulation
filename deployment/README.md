@@ -1,3 +1,5 @@
+Azure IoT Device Simulation: Deployment
+=====================================
 # Overview
 The deployment folder contains a Node.js script which, once configured, deploys all the cloud resources (IoT Hub, Virtual Machines, etc.) necessary to run an Azure IoT Device Simulation. Once the deployment succeeds, you will be presented with a URL to access the Simulation UI.
 Requirements
@@ -7,8 +9,8 @@ Requirements
 
 # Deployment
 Deployment is performed by providing the necessary configurations and then by running a Node.js deployment script. In order to get started: 
-1. Modify armtemplate/parameters.json to add required configuration values. 
-2. Navigate to the 'deployment' directory
+1. Navigate to the 'deployment' directory
+2. Modify armtemplate/parameters.json to add required configuration values. 
 3. Run the following command (which requires Node.js to be installed):
 ```nmp run deploy```
 4. Authenticate against Azure by proceeding through the authentication process when prompted.
