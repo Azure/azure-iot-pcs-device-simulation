@@ -1,0 +1,20 @@
+{
+  "deploymentRegion": {
+    "value": "{ The Azure region to deploy to. Lower case, no spaces. Example: eastus. See: https://azure.microsoft.com/en-us/global-infrastructure/geographies/#geographies }"
+  },
+  "aadTenantId": {
+    "value": "{ The Azure tenant ID that your Azure account belongs to. This is a GUID value. See: https://docs.microsoft.com/en-us/azure/marketplace/find-tenant-object-id#find-tenant-id }"
+  },
+  "subscriptionId": {
+    "value": "{ The subscription ID to deploy to. This is a GUID string. See: https://docs.microsoft.com/en-us/azure/marketplace/find-tenant-object-id#find-subscriptions-and-roles }"
+  },
+  "solutionName": {
+    "value": "{ The name of the deployment. Ex: my-simulation }"
+  },
+  "adminUsername": {
+    "value": "{ The user name for the Azure VM that will run Simulation. Ex: myUser. See: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq#what-are-the-username-requirements-when-creating-a-vm }"
+  },
+  "adminPassword": {
+    "value": "{ The Azure VM password. See: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq#what-are-the-password-requirements-when-creating-a-vm }"
+  }
+}

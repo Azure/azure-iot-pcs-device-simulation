@@ -17,3 +17,6 @@ _dev/
 *.userosscache
 *.sln.docstates
 *.userprefs
+
+dist/
+node_modules/

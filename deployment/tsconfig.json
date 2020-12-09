@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strictPropertyInitialization": false,
+        "strictNullChecks": false,
+        "target": "es2017",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "declarationMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "newLine": "lf",
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "preserveWatchOutput": true,
+        "sourceMap": true,
+        "strict": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "include": ["./src"],
+}
