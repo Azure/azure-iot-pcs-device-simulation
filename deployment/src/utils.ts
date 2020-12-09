@@ -155,7 +155,6 @@ export function checkNodeVersion(): void{
     }
 }
 
-// TODO: verify that these suffixes are still accurate
 function getDomain(creds: credentials): string {
     let domain = '.azurewebsites.net';
     switch (creds.environment.name) {
