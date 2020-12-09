@@ -1,8 +1,6 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// TODO: removed unnecessary parameters
-
 export interface DeploymentParameterDefinition{
     value: string
 }

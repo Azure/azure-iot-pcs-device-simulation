@@ -143,7 +143,6 @@ async function deployArmTemplate(
         await sleep(armConstants.SLEEP_TIME);
     }
 
-    // TODO: output URL of simulation website when deployment completes.
     if(latestState === 'Failed'){
         console.log(`Deployment failed. View deployment information here: ${rgUrl}/deployments`)
     }else{
