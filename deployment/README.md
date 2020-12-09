@@ -11,8 +11,11 @@ Requirements
 Deployment is performed by providing the necessary configurations and then by running a Node.js deployment script. In order to get started: 
 1. Navigate to the 'deployment' directory
 2. Modify armtemplate/parameters.json to add required configuration values. 
-3. Run the following command (which requires Node.js to be installed):
-```nmp run deploy```
+3. Run the following commands (which requires Node.js to be installed):
+ 
+   `npm install`
+   
+   `npm run deploy`
 4. Authenticate against Azure by proceeding through the authentication process when prompted.
 
 After performing all of the steps above, the script will create a resource group in your Azure subscription and will deploy the Azure services necessary to run Device Simulation. 
