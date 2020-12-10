@@ -71,7 +71,7 @@ export function buildApplicationCreateParameters(
                 enableAccessTokenIssuance: true,
                 enableIdTokenIssuance: true
             },
-            redirectUris: [homepage] // TODO: this can also be set in publicClient/redirectUris
+            redirectUris: [homepage] // Note: this can also be set in publicClient/redirectUris
         },
         optionalClaims: {
             idToken: [{
