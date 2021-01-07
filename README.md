@@ -4,9 +4,6 @@
 
 Azure IoT Device Simulation
 =====================================
-
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://www.azureiotsolutions.com/Accelerators#solutions/types/DS)
-
 Overview
 ========
 
@@ -32,7 +29,7 @@ Common Scenarios
 
 Getting Started
 ===============
-The best way to get started and learn how this project works is to deploy it to your Azure subscription. Get started with the [Quickstart tutorial](https://docs.microsoft.com/en-us/azure/iot-accelerators/quickstart-device-simulation-deploy).
+To get started with this project, deploy it to your Azure subscription. Follow the [deployment instructions](deployment/README.md) to get started.
 
 Project Structure
 =====================
@@ -42,10 +39,10 @@ The solution contains the following projects and folders:
 
 - **pcs-config-dotnet**  Configuration Library used to create and store configuration settings specific to your deployment
 - **pcs-diagnostics-dotnet** Diagnostics Library used to Collect metrics on how the application is used and optionally send this data to Microsoft.
--	**scripts:** a folder containing scripts for the command line console, to build and run the solution, and other frequent tasks.
 - **simulation-service** Microservice that manages all simulations
 - **storage-service** Microservice that allows management of key-values abstracting the storage semantic and store data of any format using Azure CosmosDB
 - **webui** The web user interface for Device Simulation. The service provides a RESTful endpoint to configure the simulation details, to start and stop the simulation, to add and remove virtual devices, and more.
+- **deployment** Scripts to configure and deploy 
 
 Other Resources
 ====================================

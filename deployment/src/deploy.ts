@@ -4,9 +4,11 @@
 import { createAadApp, createAppRoleAssignment, createServicePrincipal } from './aadApp';
 import {login} from './auth';
 import { deployAzureResources } from './deploymentManager';
-import { loadDeploymentConfig, validateConfig } from './utils';
+import { checkNodeVersion, loadDeploymentConfig, validateConfig } from './utils';
 
 async function main(){
+
+    checkNodeVersion();
 
     // Read config
     const deploymentConfig = loadDeploymentConfig();

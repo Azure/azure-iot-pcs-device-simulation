@@ -34,7 +34,7 @@ export async function login(deploymentConfig: IArmTemplateParameters): Promise<c
 
     if(!cachedCredentials){
         // TODO: support other clouds?
-        const environment = Environment.AzureCloud; //getAzureEnvironment(program.environment);
+        const environment = Environment.AzureCloud;
         const loginOptionsGraph: InteractiveLoginOptions = {
             environment,
             tokenAudience: aadConstants.tokenAudience,
@@ -56,8 +56,6 @@ export async function login(deploymentConfig: IArmTemplateParameters): Promise<c
         });
 
         return {
-            // TODO: the documentation for getToken makes reference of ADAL Node, which is
-            // going away in 2022
             graphCredentials: graphLoginResponse.credentials as DeviceTokenCredentials,
             armCredentials: armLoginResponse.credentials as DeviceTokenCredentials,
             environment: graphLoginResponse.credentials.environment

@@ -28,6 +28,7 @@ export const configurationConstants = {
     INVALID_PASSWORD_MSG: 'The supplied password must be between 12-72 characters long and must satisfy at least ' +
                           '3 of password complexity requirements from the following: 1) Contains an uppercase character\n2) ' + 
                           'Contains a lowercase character\n3) Contains a numeric digit\n4) Contains a special character\n5) Control characters are not allowed',
+    MINIMUM_NODEJS_VERSION: '12.18.4'
 }
 
 export const armConstants = {
