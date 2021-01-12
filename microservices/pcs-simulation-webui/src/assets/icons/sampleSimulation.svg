@@ -1,0 +1,12 @@
+<!-- Copyright (c) Microsoft. All rights reserved. -->
+
+<svg width="66" height="52" viewBox="0 0 66 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="4" width="60" height="46" stroke="#E5E5E5" stroke-width="4"/>
+<rect x="11" y="14" width="21" height="12" fill="#E5E5E5"/>
+<rect x="11" y="30" width="21" height="12" fill="#E5E5E5"/>
+<rect x="36" y="14" width="21" height="28" fill="#E5E5E5"/>
+<rect x="2" y="2" width="60" height="46" stroke="black" stroke-width="4"/>
+<rect x="9" y="12" width="21" height="12" fill="#0066CC"/>
+<rect x="9" y="28" width="21" height="12" fill="#3399FF"/>
+<rect x="34" y="12" width="21" height="28" fill="#66CCFF"/>
+</svg>

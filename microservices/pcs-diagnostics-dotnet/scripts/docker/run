@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/pcs-diagnostics-dotnet"
+
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
+source "$APP_HOME/scripts/.functions.sh"
+
+# The version is stored in a file, to avoid hardcoding it in multiple places
+APP_VERSION=$(cat "$APP_HOME/version")
+
+run_container() {
+    check_dependency_docker
+
+    $APP_HOME/scripts/env-vars-check
+
+    # Some settings are used to connect to an external dependency, e.g. Azure IoT Hub and IoT Hub Manager API
+    # Depending on which settings and which dependencies are needed, edit the list of variables
+    echo "Starting DIAGNOSTICS ..."
+    docker run -it -p 9006:9006 \
+        "$DOCKER_IMAGE:$APP_VERSION"
+}
+
+run_container
+
+set +e

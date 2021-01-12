@@ -1,0 +1,68 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/themes';
+@import '~styles/mixins';
+
+$headerHeight: 48px;
+
+.app-header {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+
+  @include rem-fallback(height, $headerHeight);
+
+  .breadcrumbs { flex-grow: 1; }
+
+  .label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include rem-fallback(line-height, $headerHeight);
+    @include rem-fallback(padding-left, 24px);
+    @include rem-fallback(padding-right, 24px);
+  }
+
+  .items-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .consent {
+      text-align: left;
+      display: inline-block;
+      @include rem-font-size(14px);
+      @include rem-fallback(padding, 5px, 8px);
+
+      > input {
+        cursor: pointer;
+        margin-right: 5px;
+        padding: padding;
+        vertical-align: middle;
+        }
+      }
+  }
+
+  // Apply theme properties
+  @include themify($themes) {
+    .label { color: themed('colorLightestFirst'); }
+
+    .items-container {
+      border-left: 1px solid themed('colorMidSecond');
+
+      .consent {
+        background-color: themed('colorLowestFirst');
+        border-color: themed('colorMidSecond');
+
+        > label { color: themed('colorLightestFirst'); }
+
+        > input { color: themed('colorLightestFirst'); }
+
+        > h2 { color: themed('colorLightestFirst'); }
+
+        > a { color: themed('colorLightestFirst'); }
+      }
+    }
+  }
+}

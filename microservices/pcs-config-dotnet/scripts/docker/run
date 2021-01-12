@@ -1,0 +1,22 @@
+#!/usr/bin/env bash -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/pcs-config-dotnet"
+
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
+source "$APP_HOME/scripts/.functions.sh"
+
+run_container() {
+    check_dependency_docker
+
+    $APP_HOME/scripts/env-vars-check
+
+    echo "Starting Config service ..."
+    docker run -it -p 9005:9005 \
+        -e PCS_STORAGEADAPTER_WEBSERVICE_URL \
+        -e PCS_DEVICESIMULATION_WEBSERVICE_URL \
+        -e PCS_TELEMETRY_WEBSERVICE_URL \
+        "$DOCKER_IMAGE:testing"
+}
+
+run_container

@@ -1,0 +1,162 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/variables';
+@import '~styles/themes';
+@import '~styles/mixins';
+
+$minWidth: 540px;
+$padding: 12px;
+$twoSidedPadding: $padding * 2;
+$oneColWidth: calc(100% - #{$padding});
+$twoColWidth: calc((100% - #{$twoSidedPadding}) / 2);
+$threeColWidth: calc((100% - #{$padding} * 3) / 3);
+
+.simulation-tile-link {
+
+  text-decoration: none;
+  @include rem-fallback(min-width, $minWidth);
+
+  &.oneCol { @include rem-fallback(width, $oneColWidth); }
+
+  &.twoCol { @include rem-fallback(width, $twoColWidth); }
+
+  &.threeCol { @include rem-fallback(width, $threeColWidth); }
+}
+
+.simulation-tile-container {
+  display: flex;
+  flex-flow: column;
+  @include rem-fallback(height, 260px);
+
+  &.active {
+    @include rem-fallback(height, 532px);
+
+    .chart-div { @include rem-fallback(height, 220px); }
+  }
+
+  .section-header {
+    border-bottom: solid 1px;
+    font-family: $fontSelawikBold;
+    @include rem-font-size(18px);
+    @include rem-fallback(line-height, 22px);
+    @include rem-fallback(padding, 24px, 24px, 12px, 24px);
+  }
+
+  .time-containers,
+  .messages-per-second-desc {
+    color: $colorSmoke;
+    display: inline-block;
+    font-family: $fontSelawikSemilight;
+    @include rem-font-size(12px);
+    @include rem-fallback(line-height, 15px);
+    @include rem-fallback(padding-bottom, 12px);
+  }
+
+  .time-containers {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    .right-time-container {
+      display: flex;
+
+      .running-icon svg {
+        -webkit-animation: clockwiseSpin 10s infinite linear;
+        animation: clockwiseSpin 10s infinite linear;
+
+        @-webkit-keyframes clockwiseSpin {
+          0%  {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+          100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+
+        }
+
+        @keyframes clockwiseSpin {
+          0%  {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+          100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+        }
+
+        @include square-px-rem(16px);
+        @include rem-fallback(margin-right, 8px);
+      }
+
+      .setting-up-icon { @include rem-fallback(margin-right, 8px); }
+
+      .simulation-error-container {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .tile-body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    @include rem-fallback(padding, 12px, 24px, 24px, 24px);
+
+    .active-devices {
+      display: flex;
+      padding: 0 0 10px 10px;
+
+      .active-devices-count,
+      .active-devices-label {
+        align-self: flex-end;
+      }
+
+      .active-devices-count {
+        font-family: $fontSelawikLight;
+        @include rem-font-size(48px);
+        @include rem-fallback(line-height, 48px);
+      }
+
+      .active-devices-label {
+        @include rem-font-size(14px);
+        @include rem-fallback(margin-left, 20px)
+      }
+    }
+
+    .simulation-summary {
+      display: flex;
+      justify-content: space-between;
+      @include rem-fallback(padding-top, 12px);
+
+      .device-model-rows { vertical-align: top; }
+
+      .device-model-rows,
+      .telemetry-container {
+        @include rem-font-size(14px);
+        @include rem-fallback(line-height, 17px);
+      }
+
+      .telemetry-container {
+        margin-top: auto;
+
+        .simulation-status-section {
+          display: flex;
+          flex-flow: column;
+          align-items: flex-end;
+        }
+      }
+
+      .messages-per-second {
+        font-family: $fontSelawikLight;
+        @include rem-font-size(32px);
+        @include rem-fallback(line-height, 39px);
+      }
+    }
+  }
+
+  // Apply theme properties
+  @include themify($themes) {
+    background: themed('colorLowestThird');
+    color: themed('colorHighest');
+
+    .section-header { border-color: themed('colorLightestFirst'); }
+
+    .running-icon svg { fill: themed('colorActive'); }
+
+    .setting-up-icon .inner { background-color: themed('colorActive'); }
+  }
+}

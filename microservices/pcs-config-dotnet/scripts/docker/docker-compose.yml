@@ -1,0 +1,44 @@
+# Usage:
+# - fill in the Document DB connection string
+# - install Docker Compose, see https://docs.docker.com/compose/install
+# - open a console and `cd` into the folder that contains this file
+# - run `docker-compose up`
+
+version: "3"
+
+services:
+  config:
+    image: azureiotpcs/pcs-config-dotnet:testing
+    depends_on:
+      - storageadapter
+      - telemetry
+      - devicesimulation
+    ports:
+      - "9005:9005"
+    environment:
+      - PCS_STORAGEADAPTER_WEBSERVICE_URL=http://storageadapter:9022/v1
+      - PCS_TELEMETRY_WEBSERVICE_URL=http://telemetry:9004/v1
+      - PCS_DEVICESIMULATION_WEBSERVICE_URL=http://devicesimlation:9003/v1
+
+  storageadapter:
+    image: azureiotpcs/pcs-storage-adapter-dotnet:testing
+    ports:
+      - "9022:9022"
+    environment:
+      - PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING
+      
+  telemetry:
+    image: azureiotpcs/telemetry-dotnet:testing
+    ports:
+      - "9004:9004"
+    environment:
+      - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
+      - PCS_STORAGEADAPTER_WEBSERVICE_URL=http://storageadapter:9022/v1
+      
+  devicesimulation:
+    image: azureiotpcs/pcs-device-simulation-dotnet:testing
+    ports:
+      - "9003:9003"
+    environment:
+      - PCS_IOTHUB_CONNSTRING
+      - PCS_STORAGEADAPTER_WEBSERVICE_URL=http://storageadapter:9022/v1

@@ -1,0 +1,4 @@
++ redux@4.0.1
+updated 1 package and audited 36474 packages in 20.579s
+found 1 high severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details

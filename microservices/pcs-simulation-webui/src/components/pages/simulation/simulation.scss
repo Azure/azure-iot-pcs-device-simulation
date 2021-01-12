@@ -1,0 +1,79 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/variables';
+@import '~styles/themes';
+@import '~styles/mixins';
+
+.simulation-container {
+  .flyout-container { width: 80%; }
+
+  .page-header {
+    font-family: $fontSelawikBold;
+    @include rem-font-size(48px);
+    @include rem-fallback(line-height, 48px);
+  }
+
+  .device-models-container {
+    @include rem-fallback(min-width, 1000px);
+
+    .device-model-row,
+    .device-model-headers { display: flex; }
+
+    .device-model-box,
+    .device-model-header {
+      @include rem-fallback(width, 150px);
+      @include rem-fallback(margin, 6px, 32px, 6px, 0px);
+
+      .form-control { @include rem-fallback(width, 150px); }
+    }
+
+    .duration-box { @include rem-fallback(margin-top, 6px); }
+
+    .throughput-box { @include rem-fallback(margin-top, 5px); }
+
+    .device-model-header {
+      text-transform: uppercase;
+      @include rem-font-size(14px);
+    }
+
+    .delete-device-model-btn {
+      @include rem-fallback(height, 26px);
+      @include rem-fallback(margin-top, 6px);
+    }
+  }
+
+  // Apply theme properties
+  @include themify($themes) {
+    color: themed('colorLightestFirst');
+
+    .device-model-header { color: themed('colorLightestFirst'); }
+
+    .btn[disabled]:hover { 
+      color: themed('colorMidFirst');
+
+      .btn-icon svg { fill: themed('colorMidFirst'); }
+    }
+
+    .apply-btn {
+      // The start simulation svg uses stroke rather than fill
+      svg {
+        fill: transparent;
+        stroke: themed('colorHighest');
+      }
+
+      &:hover svg {
+        fill: transparent;
+        stroke: themed('colorLowestSecond');
+      }
+
+      &:disabled svg {
+        fill: transparent;
+        stroke: themed('colorMidFirst');
+      }
+    }
+  }
+}
+
+.left { text-align: left; }
+
+.right { text-align: right; }

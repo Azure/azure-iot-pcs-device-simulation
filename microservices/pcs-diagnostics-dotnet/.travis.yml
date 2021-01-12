@@ -1,0 +1,11 @@
+language: csharp
+mono: none
+dotnet: 3.1
+sudo: false
+cache:
+  directories:
+  - "$HOME/.nuget/"
+before_install:
+- set -e
+script:
+- "bash ./$CODEBASE/scripts/build"

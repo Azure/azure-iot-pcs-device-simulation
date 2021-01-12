@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Usage: source ./scripts/env-vars-setup
+#
+# IMPORTANT NOTES:
+# * use "source" in front of the script path, so that variables are exported in your shell
+# * the variables are set only in the current shell, run this script every time, or automate
+#   the setup using your `~/.bash_profile`.
+
+# Prepare the environment variables used by the application
+
+# The URL where Storage Adapter web service is listening
+export PCS_STORAGEADAPTER_WEBSERVICE_URL="http://127.0.0.1:9022/v1"
+
+# The URL where Telemetry web service is listening
+export PCS_TELEMETRY_WEBSERVICE_URL="http://127.0.0.1:9004/v1"
+
+# The URL where Device Simulation web service is listening
+export PCS_DEVICESIMULATION_WEBSERVICE_URL="http://127.0.0.1:9003/v1"
+
+# The Azure Maps Api key
+export PCS_AZUREMAPS_KEY="static"
+

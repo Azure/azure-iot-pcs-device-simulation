@@ -1,0 +1,294 @@
+{
+  "header": {
+    "appName": "Microsoft Azure IoT Device Simulation",
+    "dashboard":  "Dashboard",
+    "documentation": "Documentation",
+    "logout": "Logout",
+    "sendDiagnosticsHeader": "Help us Improve",
+    "sendDiagnosticsText": "Device Simulation can send anonymous information to Microsoft, such as error logs, configuration, and information about how you use the application. No personal information is collected.",
+    "sendDiagnosticsCheckbox": "Yes, share information with Microsoft",
+    "sendDiagnosticsMicrosoftPrivacyUrl": "Privacy Statement",
+    "sendSuggestion": "Send a suggestion",
+    "simulationsDashboard": "Simulations",
+    "sourceCode": "Source code"
+  },
+  "tabs": {
+    "simulation": "simulations",
+    "deviceModels": "device models"
+  },
+  "common": {
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
+  "simulation": {
+    "currentSim": "Current Simulation",
+    "delete": "Delete",
+    "description": "Description",
+    "simSetup": "Simulation setup",
+    "start": "Start simulation",
+    "stop": "Stop simulation",
+    "deleteSim": "Delete simulation",
+    "startNew": "Start new simulation",
+    "name": "Name",
+    "newSim": "New simulation",
+    "refresh": "Refresh",
+    "showAll": "Show all simulations",
+    "showDashboard": "Show dashboard view",
+    "namePlaceholderText": "Simulation name",
+    "descPlaceholderText": "Add description about Simulation",
+    "vieIotHubMetrics": "View IoT Hub metrics in the Azure portal",
+    "details": {
+      "stats": "Statistics",
+      "header": "Simulation details",
+      "missingChart": "IoT Hub metrics unavaliable. Metrics charts are only supported for simulations using the default hub deployed with Device Simulation.",
+      "insufficientPermissions": "IoT Hub metrics unavailable. Device Simulation needs additional permissions to access IoT Hub metrics.",
+      "learnMore": "Learn more"
+    },
+    "form": {
+      "deviceModels": {
+        "addDeviceModelBtn": "Add a device type",
+        "count": "Amount",
+        "description": "Choose type of device to simulate.",
+        "header": "Device model",
+        "name": "Name",
+        "duration": "HH MM SS",
+        "throughput": "Message/sec"
+      },
+      "duration": {
+        "description": "Set how long the simulation will run.",
+        "header": "Simulation duration",
+        "endsInBtn": "End in:",
+        "runIndefinitelyBtn": "Run indefinitely"
+      },
+      "deleteDevicesWhenSimulationEnds": "Delete all devices when the simulation is complete",
+      "deleteAllDevices": "Delete all devices",
+      "errorMsg": {
+        "duplicateModelsNotAllowed": "A device model may be used only once",
+        "nameCantBeEmpty": "Simulation name is required",
+        "nameGTMaxLength": "Name can't be greater than {{simulationNameMaxLength}} characters",
+        "descGTMaxLength": "Description can't be greater than {{simulationDescMaxLength}} characters",
+        "deviceModelIsRequired": "A device model must be selected",
+        "deviceModelNameCantBeEmpty": "Name is required",
+        "valueLTMinDuration": "Duration must be at least {{minimumDurationInMinutes}} minutes",
+        "countCantBeEmpty": "Number of devices is required",
+        "countCantBeLessThanZero": "Amount must be no less than zero",
+        "countShouldBeLTMax": "Total number of devices must be no greater than {{maxSimulatedDevices}}",
+        "frequencyCantBeLessThanMinTelemetryInterval": "Telemetry frequency must be no less than {{ interval }} seconds",
+        "countShouldBeGTZero": "Number of devices must be greater than zero",
+        "hubNameCantBeEmpty": "IoT Hub connection string is required",
+        "simulationStatusError": "Something went wrong and we weren't able to get the simulation status.",
+        "invalidHubSku": "Select a Hub Sku",
+        "invalidHubUnits": "Hub units should be between 1 and 10"
+      },
+      "learnMore": "See pricing for F4-V2 VMs.",
+      "autoScaleAcknowledgement": "I understand simulating {{ totalDevicesCount }} devices requires {{ additionVMsCount }} additional VMs to be deployed in my Azure subscription. These VMs will be automatically removed once all simulations are stopped.",
+      "targetHub": {
+        "description": "Add the connection string for your IoT Hub",
+        "header": "Target IoT Hub name",
+        "usePreProvisionedBtn": "Use pre-provisioned IoT Hub",
+        "preProvisionedLbl": "Pre-provisioned",
+        "messageRateLimits": "Message rate limits",
+        "messagePerSecFormat":  "{{ messagesPerSecond }} messages/sec", 
+        "sku": {
+          "description": "Specify the IoT Hub throttling limits to use for this simulation.",
+          "s1": "S1 Standard",
+          "s2": "S2 Standard",
+          "s3": "S3 Standard",
+          "unitsLabel": "Number of units",
+          "learnMore": "View Hub limits",
+          "warningLabel": "Warning:",
+          "warningMessage": "This simulation will be throttled at {{ messageThrottlingLimit }} messages per second with these settings."
+        }
+      },
+      "telemetry": {
+        "header": "Telemetry frequency"
+      },
+      "tooltip": {
+        "bulkDeletion": "Automatically bulk deletes your devices when your simulation completes, so you don’t have to delete them one by one. If you want to keep your devices so you can run the simulation again, leave this option unchecked."
+      }
+    },
+    "grid": {
+      "id": "id",
+      "name": "Simulation",
+      "deviceModels": "Device Definition",
+      "startTime": "Sim Date Created",
+      "totalDevices": "Total Devices",
+      "totalMessages": "Total Messages Sent",
+      "averageMessages": "Average Messages Per Second",
+      "status": "Status",
+      "endTime": "Sim End Date",
+      "duration": "Sim Duraton"
+    },
+    "modals": {
+      "cancel": "Cancel",
+      "delete": {
+        "title": "Delete",
+        "header": "Delete a simulation",
+        "description": "Are you sure you want to delete",
+        "nameConfirmation": "'{{simulationName}}' ?",
+        "cancel": "Cancel",
+        "apply": "Delete",
+        "applySuccess": "Simulation deleted successfully!",
+        "close": "Close"
+      }
+    },
+    "status": {
+      "activeDevicesCount": "Active devices",
+      "averageMessagesPerSec": "Average messages per second",
+      "cleaningUp": "Cleaning up",
+      "created": "Created {{startDateTime}}",
+      "error": "Error",
+      "ended": "Ended {{endDateTime}}",
+      "failedDeviceConnectionsCount": "Failed device connections",
+      "failedDeviceTwinUpdatesCount": "Failed twin updates",
+      "failedMessagesCount": "Failed messages",
+      "header": "Simulation Status",
+      "messagesPerSec": "Messages per second",
+      "metircsNotAvailable": "Hub metrics not available for simulations with non-default hub",
+      "running": "Running",
+      "settingUp": "Setting up",
+      "simulationRunning": "Your simulation is running. Please allow a few minutes before you see data flowing to your IoT Hub.",
+      "simulationStopped": "Your simulation has stopped running.",
+      "statistics":  "Statistics",
+      "stopped": "Stopped",
+      "totalDevicesCount": "Total devices",
+      "totalMessagesCount": "Total messages",
+      "totalMessagesSentLabel": "Total messages sent {{totalMessagesCount}}"
+    }
+  },
+  "deviceModels": {
+    "title": "Add Device Models",
+    "noneFound": "No devices found.",
+    "refresh": "Refresh",
+    "behavior": {
+      "random": "Random",
+      "increment": "Increment",
+      "decrement": "Decrement"
+    },
+    "grid": {
+      "id": "id",
+      "modelName": "Model Name",
+      "description": "Description",
+      "dataPoints": "Data points",
+      "version": "version",
+      "type": "type of model",
+      "no": "no",
+      "offline": "offline",
+      "simulated": "Simulated",
+      "status": "Status",
+      "telemetry": "Telemetry",
+      "yes": "yes",
+      "custom": "custom",
+      "standard": "standard"
+    },
+    "flyouts": {
+      "cancel": "Cancel",
+      "clearAll": "Clear all",
+      "save": "Save",
+      "delete": {
+        "title": "Delete",
+        "header": "Delete a device model",
+        "description": "Are you sure you want to delete",
+        "nameConfirmation": "'{{deviceModelName}}' ?",
+        "cancel": "Cancel",
+        "apply": "Delete",
+        "applySuccess": "Device model deleted successfully!",
+        "close": "Close"
+      },
+      "clone": {
+        "title": "Clone model",
+        "name": "Clone"
+      },
+      "new": {
+        "title": "Add Device Model",
+        "basicDeviceModelDescription": "Define a new simulated device and the telemetry data to be sent from the device to your IoT hub. A single device can send one or more data points (e.g. location, humidity, etc.) allowing you to simulate data coming from real devices.",
+        "name": "Device model name",
+        "namePlaceHolder": "",
+        "description": "Model description",
+        "version": "Version",
+        "telemetry": "Telemetry data",
+        "telemetryDescription": "Set parameters for telemetry sent for the sensor.",
+        "data": "Data",
+        "dataDescription": "Set parameters for telemetry sent for the data point",
+        "addDataPoint": "Add data point",
+        "interval": "Min/Max changes occur every:",
+        "frequency": "Report Min/Max changes every:",
+        "basic": "Basic",
+        "advanced": "Advanced"
+      },
+      "edit": {
+        "title": "Edit a custom device model",
+        "name": "Edit"
+      },
+      "upload": {
+        "invalidJSONFileErrorMessage": "Invalid JSON File: {{error}}",
+        "deviceModelInfoText": "Each simulated device is derived from a specific device model. Device models define the device\n's capabilities and behavior including what messages to send, which methods are supported, etc.",
+        "deviceModelFilesInfoText": "Device models consist of one JSON configuration file, one JavaScript file defining the simulation behavior, and optionally one JavaScript file for each cloud to device method supported by the device. Advanced device models give you full control over these files. ",
+        "learnMore": "Learn More",
+        "files": "Upload device model files",
+        "uploadedFiles": "Uploaded files:",
+        "missingFiles": "Missing File(s)",
+        "browse": "Browse",
+        "missingJsonFileErrorMessage": "No JSON definition file was found. The JSON file defines the device's capabilities and is required.",
+        "tooManyJsonFilesErrorMessage": "More than one JSON file provided. A simulated device may have only one JSON definition file.",
+        "missingJSFileErrorMessage": "{{missingScriptNamesString}} file(s) are missing. Please add these files"
+      },
+      "sensors": {
+        "dataPoint": "Data point",
+        "behavior": "behavior",
+        "min": "Min value",
+        "max": "Max value",
+        "unit": "Unit",
+        "dataPointPlaceHolder": "Enter data point name",
+        "behaviorPlaceHolder": "Select behavior",
+        "minPlaceHolder": "Enter min value",
+        "maxPlaceHolder": "Enter max value",
+        "unitPlaceHolder": "Enter unit value"
+      },
+      "errorMsg": {
+        "nameCantBeEmpty": "Device model name is required",
+        "nameGTMaxLength": "Name can't be greater than {{formFieldMaxLength}} characters",
+        "dataPointNameCantBeEmpty": "Data point is required",
+        "dataPointGTMaxLength": "Data point can't be greater than {{formFieldMaxLength}} characters",
+        "versionGTMaxLength": "Version can't be greater than {{formFieldMaxLength}} characters",
+        "descGTMaxLength": "Description can't be greater than {{formDescMaxLength}} characters",
+        "unitGTMaxLength": "Unit can't be greater than {{formDescMaxLength}} characters",
+        "nameCantBeDuplicate": "Device model name already been used",
+        "behaviorCantBeEmpty": "Behavior is required",
+        "intervalCantBeLessThanOneSecond": "Telemetry interval must be no less than 1 seconds",
+        "frequencyCantBeLessThanMinTelemetryInterval": "Telemetry frequency must be no less than {{ interval }} seconds",
+        "minValueCantBeEmpty": "Min value is required",
+        "maxValueCantBeEmpty": "Max value is required",
+        "minValueMustBeLessThanMax": "Min value must be less than the max value",
+        "maxValueMustBeGreaterThanMin": "Max value must be greater than the min value",
+        "unitValueCantBeEmpty": "Unit value is required"
+      }
+    }
+  },
+  "getStarted": {
+    "title": "Get started",
+    "description": "Build basic or advanced simulated devices that look and act like the real thing. Gather, process, analyze, act on data, and use it for end-to-end solution testing. Choose from the following if you'd like help getting started.",
+    "sampleSimulation": {
+      "title": "Sample simulation",
+      "description": "Get started instantly using a sample simulation. With the sample simulation you can see data flowing to your IoT Hub right away. This will simulate a few trucks sending location, speed and cargo temperature data.",
+      "btnName": "Start a sample simulation"
+    },
+    "sampleDevices": {
+      "title": "Sample devices",
+      "description": "Get started quickly creating a simulation using sample devices. With a simple simulation using sample devices you can see data flowing to your IoT Hub right away. Simulate sample trucks, elevators, chillers and more.",
+      "btnName": "Create a sample simulation"
+    },
+    "customDevices": {
+      "title": "Custom devices",
+      "description": "Custom devices allow you to specify exactly what data is sent to your IoT Hub. You can define the different data points to send (e.g. temperature, fuel level, etc.) and provide value ranges to represent data from physical devices.",
+      "btnName": "Create a custom device"
+    },
+    "advancedDevices": {
+      "title": "Advanced devices",
+      "description": "Design complex device behaviors by authoring a custom JSON device definition file and scripting device behaviors in JavaScript. The advanced device experience gives you full control over how your simulated devices behave.",
+      "btnName": "Upload a device model"
+    },
+    "doNotShownAgain": "Don’t show me this again",
+    "findMe": "You can always find this on the help menu"
+  }
+}

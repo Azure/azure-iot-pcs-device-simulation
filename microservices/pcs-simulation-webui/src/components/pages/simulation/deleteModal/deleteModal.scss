@@ -1,0 +1,42 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/themes';
+@import '~styles/mixins';
+
+.delete-modal-container {
+  @include rem-fallback(padding, 16px);
+  @include rem-fallback(width, 384px);
+  @include rem-fallback(height, 125px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid;
+
+  .delete-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .modal-icon { @include rem-fallback(padding, 0px); }
+  }
+
+  .btn-toolbar { justify-content: flex-end; }
+
+  @include themify($themes) {
+    color:  themed('colorHighest');
+    background: themed('colorLowestSecond');
+    border-color: themed('colorSystem');
+
+    .delete-modal-header { color: themed('colorHighest'); }
+
+    .modal-icon {
+      fill: themed('colorHighest');
+
+      &:hover {
+        background-color: themed('colorLowestSecond');
+        svg { fill: themed('colorHighest'); }
+      }
+    }
+  }
+}
