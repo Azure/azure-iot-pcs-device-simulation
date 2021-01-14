@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Usage:
+# ./scripts/docker/run         : Starts the stable version
+# ./scripts/docker/run testing : Starts the testing version
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/device-simulation-webui"
+STABLE_VERSION="millennium"
+
+if [ "$1" == "testing" ]; then
+  echo "Starting Simulation Web UI [testing version] ..."
+  docker run -it -p 10080:80 -p 10443:443 $DOCKER_IMAGE:testing
+else
+  echo "Starting Simulation Web UI [$STABLE_VERSION] ..."
+  docker run -it -p 10080:80 -p 10443:443 $DOCKER_IMAGE:$STABLE_VERSION
+fi

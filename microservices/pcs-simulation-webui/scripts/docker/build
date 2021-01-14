@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/device-simulation-webui"
+# "testing" is the latest dev build, usually matching the code in the "master" branch
+DOCKER_TAG="$DOCKER_IMAGE:testing"
+
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
+source "$APP_HOME/scripts/.functions.sh"
+
+build_docker_image() {
+    check_dependency_docker
+    check_dependency_git
+
+    cd $APP_HOME
+
+    DOCKER_LABEL1="Tags=Azure,IoT,Solutions,React,SPA"
+    DOCKER_LABEL2="Commit=$(git log --pretty=format:'%H' -n 1)"
+    DOCKER_LABEL3="Date=$(/usr/bin/env date +%Y-%m-%dT%H:%M:%S)"
+
+    rm -fR out/docker
+
+    mkdir -p              out/docker/src/
+    mkdir -p              out/docker/public/
+
+    cp -p .env            out/docker/
+    cp -pR package*.json  out/docker/
+    cp -pR src/*          out/docker/src/
+    cp -pR public/*       out/docker/public/
+
+    cp scripts/docker/.dockerignore        out/docker/
+    cp scripts/docker/Dockerfile           out/docker/
+    cp scripts/docker/content/run.sh       out/docker/
+    cp scripts/docker/content/nginx.conf   out/docker/
+
+    cd out/docker/
+
+    docker build --compress --tag "$DOCKER_TAG" --label "$DOCKER_LABEL1" --label "$DOCKER_LABEL2" --label "$DOCKER_LABEL3" .
+}
+
+build_docker_image
