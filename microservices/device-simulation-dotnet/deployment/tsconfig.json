@@ -1,0 +1,10 @@
+{
+    "extends": "@azure-iot/tsconfig",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strictPropertyInitialization": false,
+        "strictNullChecks": false
+    },
+    "include": ["./src"]
+}

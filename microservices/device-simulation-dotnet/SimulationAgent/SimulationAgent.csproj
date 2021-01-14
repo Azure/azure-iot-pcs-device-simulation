@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Microsoft.Azure.IoTSolutions.DeviceSimulation.SimulationAgent</AssemblyName>
+    <RootNamespace>Microsoft.Azure.IoTSolutions.DeviceSimulation.SimulationAgent</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+</Project>

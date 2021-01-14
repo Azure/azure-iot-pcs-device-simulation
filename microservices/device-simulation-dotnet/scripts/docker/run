@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/device-simulation-dotnet"
+
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
+source "$APP_HOME/scripts/.functions.sh"
+
+run_container() {
+    check_dependency_docker
+
+    $APP_HOME/scripts/env-vars-check
+
+    echo "Starting Device Simulation ..."
+    docker run -it -p 9003:9003 \
+        -e PCS_IOTHUB_CONNSTRING \
+        -e PCS_STORAGEADAPTER_WEBSERVICE_URL \
+        "$DOCKER_IMAGE:testing"
+}
+
+run_container

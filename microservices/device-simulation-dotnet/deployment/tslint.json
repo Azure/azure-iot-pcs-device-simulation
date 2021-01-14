@@ -1,0 +1,20 @@
+{
+    "extends": "@azure-iot/tslint-config/strict",
+    "rules": {
+        "arrow-return-shorthand": [true, "multiline"],
+        "file-header": [
+            true,
+            "Copyright \\(c\\) Microsoft Corporation. All rights reserved.",
+            "Copyright (c) Microsoft Corporation. All rights reserved."
+        ],
+        "no-angle-bracket-type-assertion": true,
+        "object-literal-shorthand": true,
+        "prefer-object-spread": true,
+        "trailing-comma": [
+            true,
+            {
+                "singleline": "never"
+            }
+        ]
+    }
+}
