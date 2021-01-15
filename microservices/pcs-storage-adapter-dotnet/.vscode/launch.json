@@ -1,0 +1,54 @@
+{
+   // Use IntelliSense to find out which attributes exist for C# debugging
+   // Use hover for the description of the existing attributes
+   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+   "version": "0.2.0",
+   "configurations": [
+        {
+            "env": {
+                // Note: Any setting made in this file will override the operating system environment variable of that name.
+                
+                // See https://docs.microsoft.com/aspnet/core/fundamentals/environments
+                "ASPNETCORE_ENVIRONMENT": "Development",
+
+                // Environment variables used in appsettings.ini.  
+                // Required Settings. 
+                "PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING": "your document DB connection string"
+                // Optional Settings. For additonal optional settings, refer to appsettings.ini directly.
+            },
+            "stopAtEntry": false,
+            "justMyCode":false,
+            "enableStepFiltering": true,
+            "name": "Run Service",
+            "launchBrowser": {
+                "enabled": false,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/WebService/bin/Debug/netcoreapp2.0/Microsoft.Azure.IoTSolutions.StorageAdapter.WebService.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}/WebService/bin/Debug/netcoreapp2.0",
+            // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+    ]
+}
