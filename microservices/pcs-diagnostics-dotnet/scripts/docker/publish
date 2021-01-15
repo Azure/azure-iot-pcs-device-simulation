@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/pcs-diagnostics-dotnet"
+
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
+source "$APP_HOME/scripts/.functions.sh"
+
+# The version is stored in a file, to avoid hardcoding it in multiple places
+APP_VERSION=$(cat "$APP_HOME/version")
+
+# Whether to publish the "latest" tag of the Docker image
+UPDATE_LATEST="no"
+
+confirm_version() {
+    echo "Version to publish: $APP_VERSION"
+    read -r -p "Do you want to publish also the 'latest' version? [y/N] " response
+    if [[ $response =~ ^[Yy] ]]; then
+        UPDATE_LATEST="yes"
+    fi
+}
+
+publish() {
+    check_dependency_docker
+
+    if [[ $UPDATE_LATEST == "no" ]]; then
+        docker push $DOCKER_IMAGE:$APP_VERSION
+    else
+        docker push $DOCKER_IMAGE:$APP_VERSION
+        docker push $DOCKER_IMAGE:latest
+    fi
+}
+
+confirm_version
+publish
+
+set +e

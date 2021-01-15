@@ -6,6 +6,7 @@ import { configurationConstants, msGraphConstants, solutionConstants } from './c
 import { IArmTemplateParameters } from './interfaces';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as semver from 'semver';
 import { ResourceGroupsCreateOrUpdateResponse } from '@azure/arm-resources/esm/models';
 import { credentials } from './auth';
 import { Environment } from '@azure/ms-rest-azure-env';
@@ -148,7 +149,12 @@ export function getWebsiteUrl(hostName: string, creds: credentials): string {
     return `https://${hostName}${domain}`;
 }
 
-// TODO: verify that these suffixes are still accurate
+export function checkNodeVersion(): void{
+    if(semver.lt(process.versions.node, configurationConstants.MINIMUM_NODEJS_VERSION)){
+        throw new Error(`Node.js version >= ${configurationConstants.MINIMUM_NODEJS_VERSION} is required. Please update Node.js (https://www.nodejs.org)`);
+    }
+}
+
 function getDomain(creds: credentials): string {
     let domain = '.azurewebsites.net';
     switch (creds.environment.name) {

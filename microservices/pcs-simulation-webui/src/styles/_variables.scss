@@ -1,0 +1,51 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+// The page base font applied to the HTML tag
+// Sets the relative REM font scaling across the app
+$baseFontSize: 16px;
+
+// Variables for the selawik font family names
+$fontSelawik: 'Selawik';
+$fontSelawikBold: 'Selawik Bold';
+$fontSelawikLight: 'Selawik Light';
+$fontSelawikSemibold: 'Selawik Semibold';
+$fontSelawikSemilight: 'Selawik Semilight';
+
+// Color variables - for dark theme
+$colorAsh: #838d96;
+$colorCharcoal: #242628;
+$colorCharcoalLight: #434343;
+$colorGraphite: #3e4145;
+$colorLead: #383b3e;
+$colorMidnight: #1b1d1f;
+$colorNoir: #121416;
+$colorSmoke: #afb9c3;
+$colorStone: #6a737c;
+$colorWhite: #fff;
+$colorGreen: #008000;
+$colorRed: #ff0000;
+$colorBlue: #136bfb;
+$colorBlack: #000;
+$colorBlueDark: #00418C;
+$colorBlueLink: #60AAFF;
+$colorLinkVisited: #8DAACB;
+$colorLinkHover: #2F7FDB;
+$colorGray: #e5e5e5;
+$colorGrayLight: #2D2F33;
+$colorGrayDark: #3F3F3F;
+
+// Color variables - for light theme
+$colorAluminum: #dadae0;
+$colorBurnished: #1e1e21;
+$colorMagnesium: #ededf2;
+$colorNickel: #a1a2a6;
+$colorOre: #4a4a4f;
+$colorPlatinum: #303033;
+$colorSilver: #c3c3c9;
+$colorStephanite: #101012;
+$colorSterling: #626266;
+
+// Function color variables
+$colorAlarm: #ff2828;
+$colorWarning: #f2c80f;
+$colorSystem: #7065fd;

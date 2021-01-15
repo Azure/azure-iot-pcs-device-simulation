@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Prepare the environment variables used by the application.
+
+# DocumentDb connection string
+export PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING="..."

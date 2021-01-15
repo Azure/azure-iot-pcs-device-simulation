@@ -1,0 +1,73 @@
+<!-- Copyright (c) Microsoft. All rights reserved. -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .rocket-cls-2 {
+        fill: #f27446;
+      }
+
+      .rocket-cls-2, .rocket-cls-4, .rocket-cls-6, .rocket-cls-8, .rocket-cls-9 {
+        fill-rule: evenodd;
+      }
+
+      .rocket-cls-3 {
+        opacity: 0.75;
+      }
+
+      .rocket-cls-4 {
+        fill: rgba(64,64,64,0.1);
+      }
+
+      .rocket-cls-5, .rocket-cls-8 {
+        fill: none;
+      }
+
+      .rocket-cls-5, .rocket-cls-9 {
+        stroke: #f4f4f4;
+      }
+
+      .rocket-cls-5, .rocket-cls-8, .rocket-cls-9 {
+        stroke-miterlimit: 1;
+      }
+
+      .rocket-cls-6 {
+        fill: rgba(64,64,64,0.25);
+      }
+
+      .rocket-cls-7 {
+        opacity: 0.25;
+      }
+
+      .rocket-cls-8 {
+        stroke: #000;
+        stroke-width: 1.92px;
+      }
+
+      .rocket-cls-9 {
+        fill: rgba(244,244,244,0.25);
+      }
+
+      .rocket-cls-10 {
+        fill: #f4f4f4;
+      }
+    </style>
+  </defs>
+  <g>
+    <g transform="translate(-0.967 -0.679)">
+      <path class="rocket-cls-2" d="M.973,12.137h2.3v4.6h4.6v2.3H.973Z" transform="translate(0 13.644)"/>
+      <g transform="translate(2.113 10.834)">
+        <path class="rocket-cls-4" d="M11.535,5.637H1.469v6.9l2.3,2.3" transform="translate(-1.469 -5.637)"/>
+        <path class="rocket-cls-5" d="M11.535,5.637H1.469v6.9l2.3,2.3" transform="translate(-1.469 -5.637)"/>
+        <path class="rocket-cls-6" d="M6.469,18.006l2.3,2.3h6.9V10.277" transform="translate(5.028 0.393)"/>
+        <path class="rocket-cls-5" d="M6.469,18.006l2.3,2.3h6.9V10.277" transform="translate(5.028 0.393)"/>
+      </g>
+      <g class="rocket-cls-7" transform="translate(4.404 3.936)">
+        <path class="rocket-cls-8" d="M2.465,21.032S13.96,2.657,30.058,2.637c.021,16.158-18.4,27.593-18.4,27.593Z" transform="translate(-2.465 -2.637)"/>
+        <path d="M11.418,13.035A3.449,3.449,0,1,0,7.969,9.586,3.449,3.449,0,0,0,11.418,13.035Z" transform="translate(4.687 1.911)"/>
+      </g>
+      <path class="rocket-cls-9" d="M2.465,20.032S13.96,1.657,30.058,1.637c.021,16.158-18.4,27.593-18.4,27.593Z" transform="translate(1.939 0)"/>
+      <path d="M11.418,12.035A3.449,3.449,0,1,0,7.969,8.586,3.449,3.449,0,0,0,11.418,12.035Z" transform="translate(9.091 4.548)"/>
+    </g>
+  </g>
+</svg>

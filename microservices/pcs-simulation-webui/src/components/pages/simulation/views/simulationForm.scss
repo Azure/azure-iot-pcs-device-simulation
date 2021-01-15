@@ -1,0 +1,141 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/variables';
+@import '~styles/themes';
+@import '~styles/mixins';
+
+.bulk-deletion-container,
+.autoscale-ackownledge-container {
+  display: flex;
+
+  .checkbox-container {
+    display: block;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @include rem-font-size(16px);
+    @include rem-fallback(padding-left, 24px);
+    @include rem-fallback(margin-right, 10px);
+
+    /* Hide the browser's default checkbox */
+    input {
+      cursor: pointer;
+      position: absolute;
+      opacity: 0;
+      left: 0;
+      z-index: 10;
+      @include square-px-rem(13px);
+      @include rem-fallback(top, 3px);
+
+      /* Show the checkmark when checked */
+      &:checked ~ .checkmark:after { display: block; }
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      left: 0;
+      border: 1px solid;
+      @include square-px-rem(13px);
+      @include rem-fallback(top, 3px);
+      @include rem-fallback(border-radius, 2px);
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        border: solid;
+        border-width: 0 1px 1px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        @include rem-fallback(left, 4px);
+        @include rem-fallback(top, 1px);
+        @include rem-fallback(width, 4px);
+        @include rem-fallback(height, 8px);
+      }
+    }
+  }
+
+  .tooltip-trigger-icon svg { @include square-px-rem(12px); }
+
+  @include themify($themes) {
+    color:  themed('colorGray');
+
+    input ~ .checkmark {
+      background-color: themed('colorBlack');
+      border-color: themed('colorMidThird')
+    }
+
+    input:checked ~ .checkmark {
+      color: themed('colorBlack');
+      background-color: themed('colorHighest');
+    }
+
+    .tooltip-trigger-icon {
+      fill: themed('colorHighest');
+
+      &:hover {
+        background-color: transparent;
+        svg { fill: themed('colorLightestFirst'); }
+      }
+    }
+  }
+}
+
+.bulk-deletion-container { @include rem-fallback(padding-top, 0px); }
+
+.hub-units-box .warning-box {
+  display: flex;
+  @include rem-fallback(margin-top, 8px);
+
+  .warning-desc { @include rem-fallback(margin-left, 6px); }
+
+  .warning-label { font-weight: bold; }
+
+  @include themify($themes) {
+    .hub-units-desc { color: themed('colorHighest'); }
+
+    .warning-label,
+    .warning-desc{ color: themed('colorWarning'); }
+  }
+}
+
+.hub-units-desc { @include rem-font-size(14px); }
+
+.hub-sku-desc,
+.hub-units-box { @include rem-fallback(margin-top, 12px); }
+
+.hub-sku-radios {
+  display: flex;
+  @include rem-fallback(padding-bottom, 12px);
+  .radio-container { margin-top: 0;}
+}
+
+.hub-units-desc,
+.hub-units-box { @include rem-fallback(margin-left, 18px); }
+
+.learn-more {
+    @include rem-fallback(margin-left, 8px);
+
+    @include themify($themes) {
+      color: $colorBlueLink;
+
+      &:visited { color: $colorLinkVisited; }
+      &:hover { color: $colorLinkHover; }
+  }
+}
+
+.form-actions-container {
+  @include rem-fallback(margin-top, 48px);
+  @include rem-fallback(padding-top, 48px);
+  @include rem-fallback(padding-left, 0px);
+
+  .autoscale-ackownledge-container {
+    @include rem-fallback(margin-bottom, 40px);
+    @include rem-fallback(width, 700px);
+  }
+}

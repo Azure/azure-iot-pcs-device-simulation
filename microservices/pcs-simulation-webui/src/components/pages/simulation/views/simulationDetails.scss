@@ -1,0 +1,260 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/variables';
+@import '~styles/themes';
+@import '~styles/mixins';
+
+$navItemHeight: 48px;
+$svgSize: 16px;
+
+.simulation-details-container {
+
+  .simulation-stats-container {
+    display: flex;
+
+    .stack-container {
+      @include rem-fallback(width, 580px);
+      @include rem-fallback(min-width, 430px);
+
+      .info-container {
+        @include rem-fallback(padding, 24px);
+
+        .info-section {
+          display: flex;
+          justify-content: space-between;
+          @include rem-fallback(padding-bottom, 16px);
+
+          .info-content {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include rem-fallback(max-width, 350px);
+          }
+
+          .delete-devices-section {
+            @include rem-fallback(margin-top, 20px);
+            @include rem-fallback(height, 32px);
+          }
+        }
+
+        .time-container {
+          display: flex;
+          justify-content: space-between;
+
+          .right-time-container {
+            display: flex;
+
+            .running-icon svg {
+              -webkit-animation: clockwiseSpin 10s infinite linear;
+              animation: clockwiseSpin 10s infinite linear;
+
+              @-webkit-keyframes clockwiseSpin {
+                0%  {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+                100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+              }
+
+              @keyframes clockwiseSpin {
+                0%  {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+                100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+              }
+
+              @include square-px-rem(16px);
+              @include rem-fallback(margin-right, 8px);
+            }
+
+            .setting-up-icon { @include rem-fallback(margin-right, 8px); }
+
+            .simulation-error-container {
+              align-items: flex-end;
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+
+      .simulation-statistics {
+        @include rem-fallback(padding, 24px);
+
+        .stats-header { @include rem-font-size(24px); }
+
+        .stats-container {
+          display: flex;
+          justify-content: space-between;
+          @include rem-fallback(margin-top, 32px);
+
+          .active-devices-container  .active-devices { @include rem-font-size(48px); }
+
+          .other-stats-container {
+            .status-item { @include rem-fallback(margin-bottom, 8px); }
+
+            .status-value {
+              @include rem-font-size(24px);
+              @include rem-fallback(padding, 16px);
+            }
+          }
+        }
+      }
+    }
+
+    .telemetry-chart-container {
+      @include rem-fallback(height, 500px);
+      .splitByLabel h5 { max-width: 135px; }
+    }
+
+    .missing-chart-container {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+
+      .missing-chart-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include rem-fallback(padding, 24px);
+
+        .missing-chart-svg svg {
+          @include square-px-rem(64px);
+          @include rem-fallback(margin-bottom, 8px);
+        }
+
+        .learn-more { @include rem-fallback(margin-left, 14px) }
+      }
+    }
+
+    .error-message {
+      flex: 1 0 0;
+      @include rem-fallback(padding, 24px);
+    }
+
+    @include themify($themes) {
+      border-bottom: 1px solid themed('colorMidSecond');
+
+      .stack-container {
+        border-right: 1px solid themed('colorMidSecond');
+
+        .info-container { border-bottom: 1px solid themed('colorMidSecond'); }
+
+        .info-section  .delete-devices-section {
+          background: themed('colorGrayLight');
+
+          &:hover {
+            background: themed('colorGrayDark');
+          }
+        }
+        .status-description { color: themed('colorLightestFirst'); }
+
+        .info-label,
+        .stats-header,
+        .active-devices,
+        .status-value { color: themed('colorHighest'); }
+
+        .missing-chart-svg,
+        .running-icon svg { fill: themed('colorActive'); }
+      }
+    }
+  }
+
+  .simulation-details {
+    @include rem-fallback(padding, 24px);
+
+    .details-section-header {
+      @include rem-font-size(24px);
+      @include rem-fallback(padding-bottom, 24px);
+    }
+
+    .device-models-details-container {
+      display: flex;
+
+      .device-model-links {
+        flex-shrink: 0;
+        @include rem-fallback(min-width, 227px);
+
+        .nav-item {
+          align-items: center;
+          background-color: transparent;
+          display: flex;
+          flex-flow: row nowrap;
+          flex-shrink: 0;
+          margin: 0;
+          padding: 0;
+          text-decoration: none;
+          @include rem-fallback(padding, 0px, 10px);
+          @include rem-fallback(height, $navItemHeight);
+
+          .nav-item-count {
+            @include rem-fallback(margin-left, 10px);
+            @include rem-font-size(24px);
+          }
+
+          .nav-item-text {
+            flex-grow: 1;
+            flex-shrink: 0;
+            text-transform: capitalize;
+            @include rem-fallback(padding-left, $navItemHeight - (2 * $svgSize));
+            @include rem-fallback(line-height, $navItemHeight);
+          }
+        }
+      }
+
+      .device-model-details { @include rem-fallback(padding-left, 4px); }
+    }
+  }
+
+  @include themify($themes) {
+    border-top: 1px solid themed('colorMidSecond');
+
+    .setting-up-icon .inner { background-color: themed('colorActive'); }
+
+    .details-section-header { color: themed('colorHighest'); }
+
+    .device-model-links {
+      color: themed('colorHighest');
+      border-right: 1px solid themed('colorMidSecond');
+
+      .nav-item {
+        color: themed('colorLightestFirst');
+        border-left: 3px solid themed('colorLowestFirst');
+        &.active { border-left: 3px solid themed('colorActive'); }
+
+        &.active,
+        &:hover {
+          color: themed('colorHighest');
+          background-color: themed('colorLowestSecond');
+        }
+      }
+    }
+  }
+}
+
+.simulation-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include rem-fallback(padding, 12px, 20px);
+  @include rem-fallback(height, 40px);
+
+  .iothub-metrics-link {
+    display: none;
+
+    a {
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    .link-svg svg {
+      @include square-px-rem(16px);
+      @include rem-fallback(margin-right, 8px);
+    }
+  }
+
+  .simulation-name { @include rem-font-size(34px); }
+
+  @include themify($themes) {
+    .simulation-name,
+    a { color: themed('colorHighest'); }
+
+    .link-svg svg { fill: themed('colorLightestFirst'); }
+  }
+}

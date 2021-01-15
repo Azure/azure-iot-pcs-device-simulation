@@ -1,0 +1,24 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/normalize';
+@import '~styles/font-face-imports';
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: $fontSelawik, sans-serif;
+  font-size: 16px; // Define the base font size to allow the REMs to work
+
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    #root { height: 100%; }
+
+    button,
+    input,
+    textarea { outline: none; }
+  }
+
+}

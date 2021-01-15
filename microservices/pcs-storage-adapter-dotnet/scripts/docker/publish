@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/pcs-storage-adapter-dotnet"
+# "testing" is the latest dev build, usually matching the code in the "master" branch
+DOCKER_TAG="$DOCKER_IMAGE:testing"
+
+docker push $DOCKER_TAG

@@ -1,0 +1,11 @@
+<!-- Copyright (c) Microsoft. All rights reserved. -->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.75" d="M8 14.5C11.5899 14.5 14.5 11.5899 14.5 8C14.5 4.41015 11.5899 1.5 8 1.5C4.41015 1.5 1.5 4.41015 1.5 8C1.5 11.5899 4.41015 14.5 8 14.5Z" fill="#C50B17" fill-opacity="0.1" stroke="#C50B17" stroke-width="2.25" stroke-miterlimit="1"/>
+<g opacity="0.1">
+<path d="M10.4749 6.5L5.46094 11.5" stroke="black" stroke-miterlimit="1"/>
+<path d="M10.4749 11.4961L5.46094 6.49609" stroke="black" stroke-miterlimit="1"/>
+</g>
+<path d="M10.4749 5.5L5.46094 10.5" stroke="#C50B17" stroke-miterlimit="1"/>
+<path d="M10.4749 10.4961L5.46094 5.49609" stroke="#C50B17" stroke-miterlimit="1"/>
+</svg>
