@@ -2,10 +2,14 @@
 
 @ECHO off & setlocal enableextensions enabledelayedexpansion
 
-:: Note: use lowercase names for the Docker images
-SET DOCKER_IMAGE=azureiotpcs/pcs-diagnostics-dotnet
-:: "testing" is the latest dev build, usually matching the code in the "master" branch
-SET DOCKER_TAG=%DOCKER_IMAGE%:DS-2.0.8
+:: Used the passed in image name, if available
+SET DOCKER_TAG=%1
+IF [%1]==[] (
+    :: Note: use lowercase names for the Docker images
+    SET DOCKER_IMAGE=azureiotpcs/pcs-diagnostics-dotnet
+    :: "testing" is the latest dev build, usually matching the code in the "master" branch
+    SET DOCKER_TAG=%DOCKER_IMAGE%:DS-2.0.8
+)
 
 :: Debug|Release
 SET CONFIGURATION=Release

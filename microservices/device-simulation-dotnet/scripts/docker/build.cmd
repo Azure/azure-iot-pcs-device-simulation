@@ -2,7 +2,6 @@
 
 @ECHO off & setlocal enableextensions enabledelayedexpansion
 
-
 :: Used the passed in image name, if available
 SET DOCKER_TAG=%1
 IF [%1]==[] (
