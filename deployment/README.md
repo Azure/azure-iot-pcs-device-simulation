@@ -8,9 +8,28 @@ Requirements
 - Windows 10
 
 # Deployment
+There are two primary components of the deployment process:
+1. Building the Simulation microservices and pushing them to a Docker container repository. 
+2. Deploying the necessary Azure resources (VM, IoT Hub, AAD application registration, etc.)
+
+## Building Docker Containers
+IoT Simulation is composed of multiple microservices which, when running together, provide IoT device simulation. These microservices run inside Docker containers hosted inside an Azure Virtual Machine (VM). Before a VM can run these containers, they need to be built and published to a publicly-accessible container repository. 
+
+The BuildAndPush script, at the root of the repository, will accomplish this.
+
+1. Navigate to the root of the branch source.
+2. Run BuildAndPush.cmd and provide the required arguments.
+3. Note the values used for the repository name and the tag as these will be used during deployment.
+
+All of the required microservice Docker containers will be built and pushed to the container registry associated with the logged in Docker user.
+
+## Deploying Azure Resources
+
 Deployment is performed by providing the necessary configurations and then by running a Node.js deployment script. In order to get started: 
 1. Navigate to the 'deployment' directory
-2. Modify armtemplate/parameters.json to add required configuration values. 
+2. Modify armtemplate/parameters.json to add required configuration values. Note:
+  - Set the value of **'containerRepositoryPrefix'** to the value that you used for the **'--prefix'** argument provided to the BuildAndPush script.
+  - Set the value of **'pcsDockerTag'** to the value that you used for the **'-tag'** argument provided to the BuildAndPush script.
 3. Run the following commands (which requires Node.js to be installed):
  
    `npm install`
