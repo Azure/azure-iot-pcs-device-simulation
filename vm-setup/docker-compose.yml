@@ -17,7 +17,7 @@ version: '2'
 
 services:
   apigateway-svc:
-    image: ${CONTAINER_REPOSITORY_PREFIX}/pcs-api-gateway:${PCS_DOCKER_TAG}
+    image: ${CONTAINER_REPOSITORY_PREFIX}/api-gateway:${PCS_DOCKER_TAG}
     restart: always
     ports:
       - "443:443"
