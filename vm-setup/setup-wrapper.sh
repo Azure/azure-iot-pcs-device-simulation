@@ -29,7 +29,7 @@ if [ -z "$PCS_RELEASE_VERSION" ]; then
 fi
 
 # Note: this points to the solution WITH an IoT Hub service
-SETUP_SCRIPTS_URL="https://raw.githubusercontent.com/Azure/iot-device-simulation/${PCS_RELEASE_VERSION}/vm-setup"
+SETUP_SCRIPTS_URL="https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/${PCS_RELEASE_VERSION}/vm-setup"
 
 mkdir -p ${APP_PATH}
 cd ${APP_PATH}

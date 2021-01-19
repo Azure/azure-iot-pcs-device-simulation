@@ -76,7 +76,7 @@ if [ -z "$PCS_RELEASE_VERSION" ]; then
 fi
 
 # Note: Solution = devicesimulation
-REPOSITORY="https://raw.githubusercontent.com/Azure/iot-device-simulation/${PCS_RELEASE_VERSION}/vm-setup"
+REPOSITORY="https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/${PCS_RELEASE_VERSION}/vm-setup"
 SCRIPTS_URL="${REPOSITORY}/scripts/"
 SETUP_URL="${REPOSITORY}/setup/"
 
