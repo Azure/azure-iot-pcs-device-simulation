@@ -45,10 +45,10 @@ export const armConstants = {
     // This URL is passed to the Azure Resource Manager (ARM) during deployment as an 
     // argument which is eventually consumed during Azure VM setup. During Azure VM 
     // setup this path value is used to download a VM setup script.
-    PCS_RELEASE_VERSION: 'DS-2.0.10',
+    PCS_RELEASE_VERSION: 'DS-2.0.9',
 
     // PCS_DOCKER_TAG is used as the tag on a Docker repository to reference the Docker
     // containers that contain various Simulation microservices/components
     //   Ex: azureiotpcs/device-simulation-dotnet:${PCS_DOCKER_TAG}
-    PCS_DOCKER_TAG: 'DS-2.0.10'
+    PCS_DOCKER_TAG: 'DS-2.0.9'
 }
