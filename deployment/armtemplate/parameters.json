@@ -16,5 +16,8 @@
   },
   "adminPassword": {
     "value": "{ The Azure VM password. See: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq#what-are-the-password-requirements-when-creating-a-vm }"
+  },
+  "containerRepositoryPrefix": {
+    "value": "{ Docker container repository name. Ex: myRepository }"
   }
 }
