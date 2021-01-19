@@ -17,7 +17,7 @@ version: '2'
 
 services:
   apigateway-svc:
-    image: azureiotpcs/simulation-api-gateway:DS-2.0.0
+    image: azureiotpcs/api-gateway:DS-2.0.0
     restart: always
     ports:
       - "443:443"
@@ -35,7 +35,7 @@ services:
         max-file: "10"
 
   webui-svc:
-    image: azureiotpcs/device-simulation-webui:DS-2.0.9
+    image: azureiotpcs/pcs-simulation-webui:DS-2.0.9
     restart: always
     depends_on:
       - devicesimulation-svc
