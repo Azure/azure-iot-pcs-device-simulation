@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-import { armConstants } from "./constants";
 import { IArmTemplateParameters } from "./interfaces";
 
 export class armTemplateParameters implements IArmTemplateParameters {
@@ -20,8 +19,8 @@ export class armTemplateParameters implements IArmTemplateParameters {
     subscriptionId = { value: ''};
     aadClientServicePrincipalId = { value: ''};
     aadClientSecret = { value: ''};
-    pcsReleaseVersion = { value: armConstants.PCS_RELEASE_VERSION};
-    pcsDockerTag = { value: armConstants.PCS_DOCKER_TAG};
+    pcsReleaseVersion = { value: ''};
+    pcsDockerTag = { value: ''};
     storageEndpointSuffix = { value: ''};
 
     constructor(parameters: Partial<armTemplateParameters> = {}){

@@ -19,5 +19,11 @@
   },
   "containerRepositoryPrefix": {
     "value": "{ Docker container repository name. Ex: myRepository }"
+  },
+  "pcsReleaseVersion": {
+    "value": "DS-2.0.10"
+  },
+  "pcsDockerTag": {
+    "value": "DS-2.0.10"
   }
 }
