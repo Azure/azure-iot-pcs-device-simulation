@@ -21,7 +21,7 @@
       "type": "string",
       "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/', parameters('pcsReleaseVersion'), '/vm-setup')]",
       "metadata": {
-        "description": "The folder where ARM template and setup scripts will be downloaded from during the VM setup (use the parent of 'armtemplate' and 'single-vm' folders, e.g. https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/master/arm-deployment/devicesimulation)"
+        "description": "The folder where setup scripts will be downloaded from during the VM setup"
       }
     },
     "pcsDockerTag": {
@@ -195,7 +195,7 @@
     },
     "vmSetupScriptUri": {
       "type": "string",
-      "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/', parameters('pcsReleaseVersion'), '/arm-deployment/devicesimulation/single-vm/setup-wrapper.sh')]",
+      "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/', parameters('pcsReleaseVersion'), '/vm-setup/setup-wrapper.sh')]",
       "metadata": {
         "description": "The URL of the script used for VM setup"
       }
