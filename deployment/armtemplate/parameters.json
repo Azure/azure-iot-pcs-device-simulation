@@ -24,6 +24,6 @@
     "value": "DS-2.0.10"
   },
   "pcsDockerTag": {
-    "value": "DS-2.0.10"
+    "value": "{ The Docker tag value used when running the BuildAndPush script. }"
   }
 }
