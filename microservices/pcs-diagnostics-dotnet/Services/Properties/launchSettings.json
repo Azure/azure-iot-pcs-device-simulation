@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Services": {
+      "commandName": "Project",
+      "environmentVariables": {
+      }
+    }
+  }
+}

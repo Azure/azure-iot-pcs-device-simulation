@@ -1,0 +1,18 @@
+# Copyright (c) Microsoft. All rights reserved.
+
+# You can use this file to setup the service locally, and start all the
+# containers at once.
+#
+# Usage:
+# - setup all the environment variables referenced below
+# - install Docker Compose, see https://docs.docker.com/compose/install
+# - open a console and `cd` into the folder that contains this file
+# - run `docker-compose up`
+
+version: "3"
+
+services:
+  diagnostics:
+    image: azureiotpcs/pcs-diagnostics-dotnet:testing
+    ports:
+      - "9006:9006"

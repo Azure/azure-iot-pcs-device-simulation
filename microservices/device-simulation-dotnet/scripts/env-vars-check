@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+
+# Before checking all the env vars, detect whether secrets, usually encrypted, are available or not.
+# Secrets are not available when building a pull request, so the script will not check for those.
+detect_secrets() {
+    SECRETS_AVAILABLE="true"
+    if [[ "$TRAVIS_PULL_REQUEST" != "" && "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+        SECRETS_AVAILABLE="false"
+        echo "Warning: secrets and encrypted variables are not available when testing pull requests."
+    fi
+}
+
+detect_secrets
+
+if [ ! -z "$PCS_DEV_APPSETTINGS" ]; then
+    if [ -f "$PCS_DEV_APPSETTINGS" ]; then
+        echo "PCS_DEV_APPSETTINGS detected: skipping ENV VARS check and using settings in $PCS_DEV_APPSETTINGS"
+        exit 0
+    fi
+fi
+
+if [[ -z "$PCS_IOTHUB_CONNSTRING" && "$SECRETS_AVAILABLE" = "true" ]]; then
+    echo "Error: the PCS_IOTHUB_CONNSTRING environment variable is not defined."
+    exit 1
+fi
+
+if [[ -z "$PCS_AZURE_STORAGE_ACCOUNT" && "$SECRETS_AVAILABLE" = "true" ]]; then
+    echo "Error: the PCS_AZURE_STORAGE_ACCOUNT environment variable is not defined."
+    exit 1
+fi
+
+if [[ -z "$PCS_STORAGEADAPTER_WEBSERVICE_URL" ]]; then
+    echo "Error: the PCS_STORAGEADAPTER_WEBSERVICE_URL environment variable is not defined."
+    exit 1
+fi

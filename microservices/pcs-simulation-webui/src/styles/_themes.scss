@@ -1,0 +1,92 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import 'variables';
+
+$themes: (
+  dark: (
+    // Lows
+    colorLowestFirst: $colorNoir,
+    colorLowestSecond: $colorMidnight,
+    colorLowestThird: $colorCharcoal,
+    // Mids
+    colorMidFirst: $colorAsh,
+    colorMidSecond: $colorLead,
+    colorMidThird: $colorGraphite,
+    // Highs
+    colorLightestFirst: $colorSmoke,
+    colorLightestSecond: $colorStone,
+    colorHighest: $colorWhite,
+    // Functional colors
+    colorAlarm: $colorAlarm,
+    colorWarning: $colorWarning,
+    colorSystem: $colorSystem,
+    colorActive: $colorBlue,
+
+    // Grid - START
+    colorGridScrollBar: $colorCharcoal,
+    colorGridRowBackground: $colorMidnight,
+    colorGridCellText: $colorWhite,
+    colorGridRowHoverBackground: $colorCharcoal,
+    colorGridSelectedRowBorder: $colorSystem,
+    colorGridHeaderText: $colorSmoke,
+
+    colorCellRendererSvgFill: $colorSmoke,
+    colorCellRendererSvgFillHighlight: $colorWhite,
+    colorCellRendererText: $colorSmoke,
+    colorCellRendererTextHighlight: $colorWhite,
+    // Grid - END
+
+    // Flyout - START
+    colorFlyoutBackground: $colorNoir,
+    colorFlyoutText: $colorSmoke,
+    // Flyout -END
+
+    // Symbols - START
+    colorSuccess: $colorGreen,
+    colorFailure: $colorRed,
+    // Symbols - END
+
+    // Modal - START
+    colorBlack: $colorBlack,
+    colorModalBackground: $colorBlueDark,
+    // Modal - END
+
+    // Form - START
+    colorGray: $colorGray,
+    colorGrayLight: $colorGrayLight,
+    colorGrayDark:$colorGrayDark,
+    colorCharcoalLight: $colorCharcoalLight,
+    // Form - EED
+  ),
+  light: (
+    // Lows
+    colorLowestFirst: $colorWhite,
+    colorLowestSecond: $colorMagnesium,
+    colorLowestThird: $colorAluminum,
+    // Mids
+    colorMidFirst: $colorSterling,
+    colorMidSecond: $colorNickel,
+    colorMidThird: $colorSilver,
+    // Highs
+    colorLightestFirst: $colorBurnished,
+    colorLightestSecond: $colorPlatinum,
+    colorHighest: $colorStephanite,
+    // Functional colors
+    colorAlarm: $colorAlarm,
+    colorWarning: #F0D227,
+    colorSystem: $colorSystem,
+    // Grid - START
+    colorGridScrollBar: $colorCharcoal,
+    colorGridRowBackground: $colorMidnight,
+    colorGridCellText: $colorWhite,
+    colorGridRowHoverBackground: $colorCharcoal,
+    colorGridSelectedRowBorder: $colorSystem,
+    colorGridHeaderText: $colorSmoke,
+
+    colorCellRendererSvgFill: $colorSmoke,
+    colorCellRendererSvgFillHighlight: $colorWhite,
+    colorCellRendererText: $colorSmoke,
+    colorCellRendererTextHighlight: $colorWhite,
+    // Grid - END
+  ),
+);

@@ -1,0 +1,22 @@
+{
+    "profiles": {
+        "WebService": {
+            "commandName": "Project",
+            "launchBrowser": false,
+            "launchUrl": "http://localhost:9006/v1/status",
+            "environmentVariables": {
+                "PCS_SOLUTION_TYPE": "${PCS_SOLUTION_TYPE}",
+                "PCS_DEPLOYMENT_ID": "${PCS_DEPLOYMENT_ID}",
+                "PCS_AUTH_REQUIRED": "false",
+                "PCS_AUTH_ISSUER": "",
+                "PCS_AUTH_AUDIENCE": "",
+                "PCS_CORS_WHITELIST": "",
+                "PCS_SUBSCRIPTION_ID": "${PCS_SUBSCRIPTION_ID}",
+                "PCS_CLOUD_TYPE": "${PCS_CLOUD_TYPE}",
+                "PCS_IOTHUB_NAME": "${PCS_IOTHUB_NAME}",
+                "PCS_SOLUTION_NAME": "${PCS_SOLUTION_NAME}"
+            },
+            "applicationUrl": "http://localhost:9006/v1/status"
+        }
+    }
+}

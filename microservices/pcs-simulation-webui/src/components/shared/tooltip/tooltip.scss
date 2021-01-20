@@ -1,0 +1,109 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/variables';
+@import '~styles/themes';
+@import '~styles/mixins';
+
+.tooltip {
+  position: relative;
+
+  .tooltip-trigger {
+    display: inline-block;
+    text-decoration: underline;
+  }
+
+  .tooltip-bubble {
+    position: absolute;
+    z-index: 10;
+    @include rem-fallback(min-width, 320px);
+
+    &::after {
+      content: '';
+      position: absolute;
+    }
+  }
+
+  .tooltip-top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include rem-fallback(padding-bottom, 9px);
+
+    &::after {
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 9px solid;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .tooltip-bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include rem-fallback(padding-top, 9px);
+
+    &::after {
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 9px solid;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .tooltip-left {
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    @include rem-fallback(padding-right, 9px);
+
+    &::after {
+      border-left: 9px solid;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  .tooltip-right {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    @include rem-fallback(padding-left, 9px);
+
+    &::after {
+      border-right: 9px solid;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  .tooltip-message {
+    line-height: 1.4;
+    text-align: left;
+    @include rem-font-size(12px);
+    @include rem-fallback(border-radius, 3px);
+    @include rem-fallback(padding, 12px);
+  }
+
+  @include themify($themes) {
+    .tooltip-message {
+      color:  themed('colorCharcoalLight');
+      background-color: themed('colorHighest');
+    }
+
+    .tooltip-top::after { border-top-color: themed('colorHighest'); }
+    .tooltip-bottom::after { border-bottom-color: themed('colorHighest'); }
+    .tooltip-left::after { border-left-color: themed('colorHighest'); }
+    .tooltip-right::after { border-right-color: themed('colorHighest'); }
+  }
+}

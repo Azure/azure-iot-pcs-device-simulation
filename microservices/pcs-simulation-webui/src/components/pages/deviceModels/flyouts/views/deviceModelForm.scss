@@ -1,0 +1,86 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/themes';
+@import '~styles/mixins';
+
+.device-model-form-container {
+
+  .sensors-container {
+    @include rem-fallback(min-width, 1000px);
+
+    .sensor-row, .sensor-headers { display: flex; }
+
+    .sensor-box, .sensor-header {
+      @include rem-fallback(width, 150px);
+      @include rem-fallback(margin, 6px, 32px, 6px, 0px);
+
+      .form-control { @include rem-fallback(width, 150px); }
+    }
+
+    .sensor-header {
+      text-transform: uppercase;
+      @include rem-font-size(14px);
+    }
+  }
+
+  .form-group-label {
+    @include rem-font-size(14px);
+  }
+
+  .file-uploader-container {
+    position: relative;
+    display: inline-block;
+    @include rem-fallback(margin-left, 32px);
+
+    label { text-decoration: underline; }
+
+    .file-uploader {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .browse-button {
+      border: none;
+      @include rem-fallback(width, 100px);
+      @include rem-fallback(height, 32px);
+      @include rem-font-size(12px);
+    }
+  }
+
+  .device-model-info-text { @include rem-fallback(margin-top, 22px); }
+
+  .upload-results-container {
+    display: flex;
+    @include rem-fallback(margin-bottom, 8px);
+
+    .file-name { @include rem-fallback(width, 250px); }
+
+    .validation-message { @include rem-fallback(margin-top, 8px); }
+
+    .success-result svg {
+      @include rem-fallback(width, 16px);
+      @include rem-fallback(height, 16px);
+    }
+
+    .failed-result svg {
+      @include rem-fallback(width, 16px);
+      @include rem-fallback(height, 16px);
+    }
+  }
+
+  @include themify($themes) {
+    .sensors-container .sensor-header { color: themed('colorLightestFirst'); }
+    .upload-results-container {
+      .success-result svg { fill: themed('colorSuccess'); }
+      .failed-result svg { fill: themed('colorFailure'); }
+    }
+
+    .file-uploader-container .browse-button {
+        background-color: $colorBlue;
+        color: $colorWhite;
+    }
+  }
+}

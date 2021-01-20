@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+# Note: Windows Bash doesn't support shebang extra params
+set -e
+
+# Note: use lowercase names for the Docker images
+DOCKER_IMAGE="azureiotpcs/pcs-storage-adapter-dotnet"
+
+APP_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && cd .. && pwd )/"
+source "$APP_HOME/scripts/.functions.sh"
+
+run_container() {
+    check_dependency_docker
+
+    $APP_HOME/scripts/env-vars-check
+
+    # Some settings are used to connect to an external dependency, e.g. Azure IoT Hub and IoT Hub Manager API
+    # Depending on which settings and which dependencies are needed, edit the list of variables
+    echo "Starting Storage Adapter ..."
+    docker run -it -p 9022:9022 \
+        -e PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING \
+        "$DOCKER_IMAGE:testing"
+}
+
+run_container

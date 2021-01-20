@@ -1,0 +1,22 @@
+// Copyright (c) Microsoft. All rights reserved.
+
+@import '~styles/themes';
+@import '~styles/mixins';
+
+.fileUpload {
+  .file-uploader-container {
+    position: relative;
+    display: inline-block;
+    @include rem-fallback(margin-left, 32px);
+
+    label { text-decoration: underline; }
+
+    .file-uploader {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}
