@@ -103,8 +103,6 @@ GOTO :EOF
 SETLOCAL
 SET component=%1
 
-:: The API Gateway source folder uses a different structure
-:: than that of the other microservices
 IF "%1"=="%SERVICENAME_APIGATEWAY%" (
     SET dockerfilePath=.
 ) ELSE (
