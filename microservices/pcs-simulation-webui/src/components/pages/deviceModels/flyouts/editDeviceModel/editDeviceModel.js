@@ -1,11 +1,11 @@
 // Copyright (c) Microsoft. All rights reserved.
 
 import React from 'react';
-import { svgs } from 'utilities';
-import Flyout from 'components/shared/flyout';
+import { svgs } from '../../../../../utilities';
+import Flyout from '../../../../shared/flyout';
 import DeviceModelForm from '../views/deviceModelForm';
 import DeviceModelUploadForm from '../views/deviceModelUploadForm';
-import { Svg } from 'components/shared';
+import { Svg } from '../../../../shared';
 
 export const EditDeviceModel = (props) => (
   <Flyout.Container className="device-model-flyout-container">

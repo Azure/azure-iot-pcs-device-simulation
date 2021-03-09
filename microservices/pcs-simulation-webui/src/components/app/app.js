@@ -7,14 +7,14 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import Header from './header/header';
 import Navigation from './navigation/navigation';
 import Main from './main/main';
-import { PageContent } from 'components/shared';
+import { PageContent } from '../shared';
 
 // Page Components
 import  {
   SimulationContainer as SimulationPage,
   DeviceModelsContainer as DeviceModelsPage,
   PageNotFound
-} from 'components/pages';
+} from '../pages';
 
 import './app.scss';
 

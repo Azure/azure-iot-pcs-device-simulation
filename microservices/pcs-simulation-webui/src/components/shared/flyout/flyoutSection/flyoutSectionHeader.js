@@ -3,8 +3,8 @@
 import React from'react';
 
 import { withAccordion } from './accordionProvider';
-import { Svg } from 'components/shared/svg/svg';
-import { svgs, joinClasses } from 'utilities';
+import { Svg } from '../../svg/svg';
+import { svgs, joinClasses } from '../../../../utilities';
 
 export const FlyoutSectionHeader = withAccordion(
   ({ accordionIsCollapsable, className, children, toggleAccordion, accordionIsOpen }) => {

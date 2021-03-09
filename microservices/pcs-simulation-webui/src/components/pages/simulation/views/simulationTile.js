@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 import { Subject } from 'rxjs';
 import moment from 'moment';
 
-import Config from 'app.config';
-import { SectionHeader, Svg, ErrorMsg, Indicator } from 'components/shared';
-import { svgs } from 'utilities';
-import { SimulationService, MetricsService, retryHandler } from 'services';
+import Config from '../../../../app.config';
+import { SectionHeader, Svg, ErrorMsg, Indicator } from '../../../shared';
+import { svgs } from '../../../../utilities';
+import { SimulationService, MetricsService, retryHandler } from '../../../../services';
 import { TelemetryChart, chartColorObjects } from './metrics';
 
 import './simulationTile.scss';

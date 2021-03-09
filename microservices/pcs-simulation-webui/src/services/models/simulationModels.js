@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
-import Config from 'app.config';
-import { stringToBoolean } from 'utilities';
+import Config from '../../app.config';
+import { stringToBoolean } from '../../utilities';
 
 // Contains methods for converting service response
 // object to UI friendly objects

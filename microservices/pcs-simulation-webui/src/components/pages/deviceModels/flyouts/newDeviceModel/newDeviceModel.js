@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import Flyout from 'components/shared/flyout';
+import Flyout from '../../../../shared/flyout';
 import DeviceModelForm from '../views/deviceModelForm';
 import DeviceModelUploadForm from '../views/deviceModelUploadForm';
 

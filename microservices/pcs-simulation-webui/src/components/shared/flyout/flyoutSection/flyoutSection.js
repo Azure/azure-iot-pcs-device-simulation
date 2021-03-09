@@ -3,7 +3,7 @@
 import React from'react';
 
 import { AccordionProvider } from './accordionProvider';
-import { joinClasses } from 'utilities';
+import { joinClasses } from '../../../../utilities';
 
 import './flyoutSection.scss';
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { joinClasses } from 'utilities';
+import { joinClasses } from '../../../utilities';
 
 import './contextMenu.scss';
 

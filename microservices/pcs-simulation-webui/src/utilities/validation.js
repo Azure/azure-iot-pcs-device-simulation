@@ -3,7 +3,7 @@
 import { Component } from 'react';
 import update from 'immutability-helper';
 
-import { isFunc } from 'utilities';
+import { isFunc } from './methods';
 
 /** Contains logic for validating a value */
 export class Validator {

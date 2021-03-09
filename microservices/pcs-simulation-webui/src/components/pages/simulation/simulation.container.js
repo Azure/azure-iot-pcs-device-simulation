@@ -3,14 +3,14 @@
 import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
 import { Simulation } from './simulation';
-import { epics as appEpics } from 'store/reducers/appReducer';
+import { epics as appEpics } from '../../../store/reducers/appReducer';
 import {
   epics as simulationEpics,
   getSimulationListWithDeviceModels,
   getPreprovisionedIoTHub,
   getSimulationError
-} from 'store/reducers/simulationReducer';
-import { getDeviceModels, getDeviceModelEntities } from 'store/reducers/deviceModelsReducer';
+} from '../../../store/reducers/simulationReducer';
+import { getDeviceModels, getDeviceModelEntities } from '../../../store/reducers/deviceModelsReducer';
 
 // Pass the simulation status
 const mapStateToProps = state => ({

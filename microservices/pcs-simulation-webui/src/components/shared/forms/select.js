@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
 
-import { joinClasses } from 'utilities';
+import { joinClasses } from '../../../utilities';
 
 import './styles/select.scss';
 

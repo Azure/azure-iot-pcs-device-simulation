@@ -3,9 +3,9 @@
 import React, { Component } from 'react';
 import { withNamespaces } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import { Svg } from 'components/shared';
+import { Svg } from '../../shared';
 
-import { svgs } from 'utilities';
+import { svgs } from '../../../utilities';
 
 import './navigation.scss';
 

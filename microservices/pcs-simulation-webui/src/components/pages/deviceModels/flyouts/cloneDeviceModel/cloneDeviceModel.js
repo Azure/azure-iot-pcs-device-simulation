@@ -1,9 +1,9 @@
 // Copyright (c) Microsoft. All rights reserved.
 
 import React from 'react';
-import { svgs } from 'utilities';
-import Flyout from 'components/shared/flyout';
-import { Svg } from 'components/shared';
+import { svgs } from '../../../../../utilities';
+import Flyout from '../../../../shared/flyout';
+import { Svg } from '../../../../shared';
 import DeviceModelForm from '../views/deviceModelForm';
 
 export const CloneDeviceModel = (props) => (

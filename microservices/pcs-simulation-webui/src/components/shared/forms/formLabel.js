@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { joinClasses } from 'utilities';
+import { joinClasses } from '../../../utilities';
 
 export const FormLabel = (props) => {
   const { formGroupId, className, children, htmlFor, ...rest } = props;

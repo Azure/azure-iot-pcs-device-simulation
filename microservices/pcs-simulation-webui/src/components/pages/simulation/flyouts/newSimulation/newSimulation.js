@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Flyout from 'components/shared/flyout';
+import Flyout from '../../../../shared/flyout';
 import SimulationForm from '../../views/simulationForm';
 
 export const NewSimulation = (props) => (

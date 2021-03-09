@@ -1,9 +1,9 @@
 // Copyright (c) Microsoft. All rights reserved.
 
 import React, { Component } from 'react';
-import { PcsGrid } from 'components/shared';
+import { PcsGrid } from '../../../shared';
 import { simulationsColumnDefs, defaultSimulationsGridProps } from './simulationsGridConfig';
-import { isFunc, translateColumnDefs } from 'utilities';
+import { isFunc, translateColumnDefs } from '../../../../utilities';
 
 /**
  * A grid for displaying list of simulations

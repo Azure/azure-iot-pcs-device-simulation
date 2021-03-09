@@ -2,7 +2,7 @@
 
 # Note: multi-stage build, requires Docker 17.05+ (released in May 2017)
 
-FROM node:11.3.0-alpine as codebuilder
+FROM node:12.21.0-alpine as codebuilder
 COPY .env ./ /app/
 WORKDIR /app
 RUN echo "Installing node packages ..." && npm install

@@ -2,9 +2,9 @@
 
 import moment from 'moment';
 import { Observable } from 'rxjs';
-import diagnosticsEvent from 'store/logEventUtil';
-import { ConfigService, DiagnosticsService } from 'services';
-import { createAction, createReducerScenario, createEpicScenario } from 'store/utilities';
+import diagnosticsEvent from '../logEventUtil';
+import { ConfigService, DiagnosticsService } from '../../services';
+import { createAction, createReducerScenario, createEpicScenario } from '../utilities';
 import {
   epics as simulationEpics,
   redux as simulationRedux

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { schema, normalize } from 'normalizr';
 import update from 'immutability-helper';
 import { createSelector } from 'reselect';
-import { DeviceModelsService } from 'services';
+import { DeviceModelsService } from '../../services';
 import { epics as appEpics } from './appReducer';
 import diagnosticsEvent from '../logEventUtil';
 import {
@@ -13,7 +13,7 @@ import {
   errorPendingInitialState,
   errorReducer,
   getError
-} from 'store/utilities';
+} from '../utilities';
 
 // ========================= Epics - START
 const handleError = fromAction => error => {

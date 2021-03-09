@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 
-import { svgs } from 'utilities';
-import { Btn, Modal, Svg } from 'components/shared';
+import { svgs } from '../../../utilities';
+import { Btn, Modal, Svg } from '../../shared';
 import { WelcomeTile } from './welcomeTile';
 
 import './welcomeModal.scss';

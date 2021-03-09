@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import Rx from 'rxjs';
-import Config from 'app.config';
-import { isFunc } from 'utilities';
+import Config from '../../../app.config';
+import { isFunc } from '../../../utilities';
 import { Indicator } from '../indicator/indicator';
 
 import '../../../../node_modules/ag-grid/dist/styles/ag-grid.css';

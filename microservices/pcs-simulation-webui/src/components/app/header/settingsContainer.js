@@ -6,7 +6,7 @@ import Settings from './settings';
 import {
   epics,
   getSolutionSettings
-} from 'store/reducers/appReducer';
+} from '../../../store/reducers/appReducer';
 
 const mapStateToProps = state => ({
   settings: getSolutionSettings(state)

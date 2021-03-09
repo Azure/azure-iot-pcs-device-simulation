@@ -2,7 +2,7 @@
 
 import { Observable } from 'rxjs';
 import { HttpClient } from './httpClient';
-import Config from 'app.config';
+import Config from '../app.config';
 
 test('ajax request has timeout parameter', () => {
   const url = 'http://www.fakeurl.com';

@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { joinClasses } from 'utilities';
+import { joinClasses } from '../../../utilities';
 
 import './styles/formGroup.scss';
 

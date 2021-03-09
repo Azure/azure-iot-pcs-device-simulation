@@ -2,7 +2,7 @@
 
 import { Observable } from 'rxjs';
 import { AuthService } from './authService';
-import Config from 'app.config';
+import Config from '../app.config';
 import { AjaxError, RetryableAjaxError } from './models';
 
 /**

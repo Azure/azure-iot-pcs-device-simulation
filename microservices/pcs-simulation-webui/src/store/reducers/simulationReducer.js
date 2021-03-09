@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { schema, normalize } from 'normalizr';
 import update from 'immutability-helper';
 import { createSelector } from 'reselect';
-import Config from 'app.config';
-import { getDeviceModelEntities } from 'store/reducers/deviceModelsReducer';
-import { SimulationService } from 'services';
-import { toSimulationListModel, toSimulationModel, toSimulationStatusModel } from 'services/models';
-import { createReducerScenario, createEpicScenario } from 'store/utilities';
+import Config from '../../app.config';
+import { getDeviceModelEntities } from './deviceModelsReducer';
+import { SimulationService } from '../../services';
+import { toSimulationListModel, toSimulationModel, toSimulationStatusModel } from '../../services/models';
+import { createReducerScenario, createEpicScenario } from '../utilities';
 import { epics as appEpics } from './appReducer';
 import diagnosticsEvent from '../logEventUtil';
 

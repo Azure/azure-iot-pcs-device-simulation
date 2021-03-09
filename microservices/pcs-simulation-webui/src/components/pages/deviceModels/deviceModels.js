@@ -2,9 +2,9 @@
 
 import React, { Component } from 'react';
 import { DeviceModelsGrid } from './deviceModelsGrid';
-import { Btn, PageContent, ContextMenu } from 'components/shared';
+import { Btn, PageContent, ContextMenu } from '../../shared';
 import { NewDeviceModel } from './flyouts';
-import { svgs } from 'utilities';
+import { svgs } from '../../../utilities';
 import { deviceModelFormModes } from './flyouts/views/deviceModelForm'
 
 import './deviceModels.scss';

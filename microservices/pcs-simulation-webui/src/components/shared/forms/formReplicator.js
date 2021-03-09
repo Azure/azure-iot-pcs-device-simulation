@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import update from 'immutability-helper';
 import PropTypes from 'prop-types';
-import { isFunc, isObject } from 'utilities';
+import { isFunc, isObject } from '../../../utilities';
 
 /**
  * The FormReplicator component is used to replicate subsections of forms.

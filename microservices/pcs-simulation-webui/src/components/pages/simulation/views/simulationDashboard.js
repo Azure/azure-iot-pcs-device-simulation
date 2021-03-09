@@ -3,11 +3,11 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment';
-import Config from 'app.config';
+import Config from '../../../../app.config';
 
-import { Btn, PageContent, ContextMenu, SectionHeader } from 'components/shared';
+import { Btn, PageContent, ContextMenu, SectionHeader } from '../../../shared';
 import { NewSimulation } from '../flyouts';
-import { svgs, humanizeDuration } from 'utilities';
+import { svgs, humanizeDuration } from '../../../../utilities';
 import SimulationTile from './simulationTile';
 import { SimulationsGrid } from './simulationsGrid';
 

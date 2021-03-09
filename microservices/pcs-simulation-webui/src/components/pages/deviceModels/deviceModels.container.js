@@ -9,7 +9,7 @@ import {
   getDeleteDeviceModelError,
   getUpLoadDeviceModelsError,
   getDeviceModelsNameSet
-} from 'store/reducers/deviceModelsReducer';
+} from '../../../store/reducers/deviceModelsReducer';
 import { DeviceModels } from './deviceModels';
 
 // Pass the device models

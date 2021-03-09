@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Duration } from './duration';
 import { Select } from './select';
 import { ErrorMsg } from './errorMsg';
-import { joinClasses, isFunc, Link } from 'utilities';
+import { joinClasses, isFunc, Link } from '../../../utilities';
 
 import './styles/formControl.scss';
 

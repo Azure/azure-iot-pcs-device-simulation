@@ -1,5 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved.
-import Config from 'app.config';
+import Config from '../../app.config';
 
 // Map to deviceModes in device model tabs
 export const toDeviceModels = ({ Items = []}) => Items.map(toDeviceModel);

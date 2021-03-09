@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { SettingsContainer } from './settingsContainer';
-import { Svg } from 'components/shared';
-import { svgs, isDef } from 'utilities';
-import ProfileImagePath from 'assets/images/profile.png';
+import { Svg } from '../../shared';
+import { svgs, isDef } from '../../../utilities';
+import ProfileImagePath from '../../../assets/images/profile.png';
 import { WelcomeModal } from '../welcomeModal/welcomeModal';
 import { Breadcrumbs } from './breadcrumbs';
 

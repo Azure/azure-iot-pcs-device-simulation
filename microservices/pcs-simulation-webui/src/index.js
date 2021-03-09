@@ -2,18 +2,18 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Config from 'app.config';
+import Config from './app.config';
 import { Observable } from 'rxjs';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 
-import configureStore from 'store/configureStore';
-import diagnosticsEvent from 'store/logEventUtil';
-import AppContainer from 'components/app/app.container';
-import registerServiceWorker from 'registerServiceWorker';
-import { AuthService } from 'services';
-import { epics as appEpics } from 'store/reducers/appReducer';
+import configureStore from './store/configureStore';
+import diagnosticsEvent from './store/logEventUtil';
+import AppContainer from './components/app/app.container';
+import registerServiceWorker from './registerServiceWorker';
+import { AuthService } from './services';
+import { epics as appEpics } from './store/reducers/appReducer';
 
 // Initialize internationalization
 import './i18n';

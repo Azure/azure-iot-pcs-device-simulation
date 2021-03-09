@@ -2,8 +2,8 @@
 
 import React from 'react';
 import moment from 'moment';
-import { svgs, LinkedComponent, Validator } from 'utilities';
-import Config from 'app.config';
+import { svgs, LinkedComponent, Validator } from '../../../../../utilities';
+import Config from '../../../../../app.config';
 import {
   Btn,
   BtnToolbar,
@@ -15,7 +15,7 @@ import {
   FormSection,
   SectionHeader,
   SectionDesc,
-} from 'components/shared';
+} from '../../../..//shared';
 import {
   behaviorOptions,
   toSensorInput,

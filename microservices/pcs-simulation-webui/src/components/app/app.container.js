@@ -4,9 +4,9 @@ import { withRouter } from 'react-router-dom';
 import { withCookies } from 'react-cookie';
 import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
-import { AuthService } from 'services';
-import { epics as appEpics } from 'store/reducers/appReducer';
-import { getPreprovisionedIoTHub } from 'store/reducers/simulationReducer';
+import { AuthService } from '../../services';
+import { epics as appEpics } from '../../store/reducers/appReducer';
+import { getPreprovisionedIoTHub } from '../../store/reducers/simulationReducer';
 import App from './app';
 
 // Pass the simulation status

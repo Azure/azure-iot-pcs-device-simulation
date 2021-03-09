@@ -1,8 +1,8 @@
 // Copyright (c) Microsoft. All rights reserved.
 
-import Config from 'app.config';
+import Config from '../../../../app.config';
 
-import { gridValueFormatters } from 'components/shared/pcsGrid/pcsGridConfig';
+import { gridValueFormatters } from '../../../shared/pcsGrid/pcsGridConfig';
 
 const { checkForEmpty } = gridValueFormatters;
 

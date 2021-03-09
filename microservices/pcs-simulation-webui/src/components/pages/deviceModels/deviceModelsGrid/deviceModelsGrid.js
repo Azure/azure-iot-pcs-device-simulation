@@ -2,10 +2,10 @@
 
 import React, { Component } from 'react';
 import isEqual from 'lodash/isEqual';
-import { Btn, PcsGrid } from 'components/shared';
-import Config from 'app.config';
+import { Btn, PcsGrid } from '../../../shared';
+import Config from '../../../../app.config';
 import { checkboxParams, deviceModelsColumnDefs, defaultDeviceModelGridProps } from './deviceModelsGridConfig';
-import { isFunc, svgs, translateColumnDefs } from 'utilities';
+import { isFunc, svgs, translateColumnDefs } from '../../../../utilities';
 import { EditDeviceModel, CloneDeviceModel } from '../flyouts';
 import { deviceModelFormModes } from '../flyouts/views/deviceModelForm'
 import { DeleteModal } from '../deleteModal/deleteModal';

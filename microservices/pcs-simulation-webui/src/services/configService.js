@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
 
-import Config from 'app.config';
+import Config from '../app.config';
 import { HttpClient } from './httpClient';
 
 const ENDPOINT = Config.configApiUrl;

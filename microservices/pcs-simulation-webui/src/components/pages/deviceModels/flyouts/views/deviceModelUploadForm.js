@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { isEqual, isEmpty } from 'lodash';
 import { Observable } from 'rxjs';
-import { DeviceModelScriptsService } from 'services';
-import { svgs } from 'utilities';
-import { Svg, FileUpload } from 'components/shared';
+import { DeviceModelScriptsService } from '../../../../../services';
+import { svgs } from '../../../../../utilities';
+import { Svg, FileUpload } from '../../../../shared';
 import {
   Btn,
   BtnToolbar,
@@ -16,7 +16,7 @@ import {
   FormLabel,
   FormSection,
   Indicator
-} from 'components/shared';
+} from '../../../../shared';
 
 import './deviceModelForm.scss';
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { FormGroup, FormControl } from 'components/shared';
+import { FormGroup, FormControl } from '../../../shared';
 
 const headers = [ 'SENSOR NAME', 'BEHAVIOR', 'MIN VALUE', 'MAX VALUE', 'UNIT' ];
 

@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import { svgs } from 'utilities';
-import { Btn, BtnToolbar, Modal } from 'components/shared';
+import { svgs } from '../../../../utilities';
+import { Btn, BtnToolbar, Modal } from '../../../shared';
 
 import './deleteModal.scss';
 

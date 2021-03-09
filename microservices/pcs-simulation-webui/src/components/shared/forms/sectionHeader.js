@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { joinClasses } from 'utilities';
+import { joinClasses } from '../../../utilities';
 
 // This component has no style sheet.
 // The styles are applied contextually by its parent.

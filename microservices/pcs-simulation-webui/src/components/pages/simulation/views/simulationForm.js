@@ -4,8 +4,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-import Config from 'app.config';
-import { svgs, LinkedComponent, Validator, int } from 'utilities';
+import Config from '../../../../app.config';
+import { svgs, LinkedComponent, Validator, int } from '../../../../utilities';
 import {
   Btn,
   BtnToolbar,
@@ -20,9 +20,9 @@ import {
   SectionHeader,
   Svg,
   Tooltip
-} from 'components/shared';
+} from '../../../shared';
 
-import { SimulationService } from 'services';
+import { SimulationService } from '../../../../services';
 
 import './simulationForm.scss';
 

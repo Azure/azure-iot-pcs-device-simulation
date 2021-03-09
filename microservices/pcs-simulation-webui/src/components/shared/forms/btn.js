@@ -3,8 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Svg } from 'components/shared/svg/svg';
-import { joinClasses } from 'utilities';
+import { Svg } from '../svg/svg';
+import { joinClasses } from '../../../utilities';
 
 import './styles/btn.scss';
 

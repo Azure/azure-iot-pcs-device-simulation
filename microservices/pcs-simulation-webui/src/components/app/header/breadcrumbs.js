@@ -3,8 +3,8 @@
 import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
 
-import { Svg } from 'components/shared';
-import { svgs, isDef } from 'utilities';
+import { Svg } from '../../shared';
+import { svgs, isDef } from '../../../utilities';
 
 const Crumb = ({ children }) => <div className="crumb">{ children }</div>
 const Chevron = () => <Svg path={svgs.chevronRight} className="chevron-icon" />;

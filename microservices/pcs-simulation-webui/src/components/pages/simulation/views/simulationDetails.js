@@ -6,10 +6,10 @@ import moment from 'moment';
 import { Route, NavLink, Redirect, withRouter, Link } from "react-router-dom";
 import { debounce } from 'lodash';
 
-import Config from 'app.config';
-import { svgs, humanizeDuration, isDef } from 'utilities';
-import { Btn, ContextMenu, Svg, ErrorMsg, Indicator } from 'components/shared';
-import { SimulationService, MetricsService, retryHandler } from 'services';
+import Config from '../../../../app.config';
+import { svgs, humanizeDuration, isDef } from '../../../../utilities';
+import { Btn, ContextMenu, Svg, ErrorMsg, Indicator } from '../../../shared';
+import { SimulationService, MetricsService, retryHandler } from '../../../../services';
 import { TelemetryChart, chartColorObjects } from './metrics';
 import { NewSimulation } from '../flyouts';
 import { DeleteModal } from '../deleteModal/deleteModal';
