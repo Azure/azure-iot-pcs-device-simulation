@@ -4,6 +4,8 @@
 
 Azure IoT Device Simulation
 =====================================
+Note: As of May 6th 2021, the Device Simulation solution accelerator is no longer supported. This repository has been archived.
+
 Overview
 ========
 
