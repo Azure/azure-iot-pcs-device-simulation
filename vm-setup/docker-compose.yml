@@ -17,7 +17,7 @@ version: '2'
 
 services:
   apigateway-svc:
-    image: azureiotpcs/api-gateway:DS-2.0.0
+    image: ${CONTAINER_REPOSITORY_PREFIX}/api-gateway:${PCS_DOCKER_TAG}
     restart: always
     ports:
       - "443:443"
@@ -35,7 +35,7 @@ services:
         max-file: "10"
 
   webui-svc:
-    image: azureiotpcs/pcs-simulation-webui:DS-2.0.9
+    image: ${CONTAINER_REPOSITORY_PREFIX}/pcs-simulation-webui:${PCS_DOCKER_TAG}
     restart: always
     depends_on:
       - devicesimulation-svc
@@ -50,7 +50,7 @@ services:
         max-file: "10"
 
   devicesimulation-svc:
-    image: azureiotpcs/device-simulation-dotnet:${PCS_DOCKER_TAG}
+    image: ${CONTAINER_REPOSITORY_PREFIX}/device-simulation-dotnet:${PCS_DOCKER_TAG}
     restart: always
     depends_on:
       - storageadapter-svc
@@ -91,7 +91,7 @@ services:
 #     - /app/custom-device-simulation-appsettings.ini:/app/webservice/appsettings.ini:ro
 
   storageadapter-svc:
-    image: azureiotpcs/pcs-storage-adapter-dotnet:DS-2.0.9
+    image: ${CONTAINER_REPOSITORY_PREFIX}/pcs-storage-adapter-dotnet:${PCS_DOCKER_TAG}
     restart: always
     environment:
       - PCS_LOG_LEVEL
@@ -107,7 +107,7 @@ services:
         max-file: "10"
 
   diagnostics-svc:
-    image: azureiotpcs/pcs-diagnostics-dotnet:DS-2.0.9
+    image: ${CONTAINER_REPOSITORY_PREFIX}/pcs-diagnostics-dotnet:${PCS_DOCKER_TAG}
     restart: always
     depends_on:
       - config-svc
@@ -132,7 +132,7 @@ services:
         max-file: "10"
 
   config-svc:
-    image: azureiotpcs/pcs-config-dotnet:DS-2.0.9
+    image: ${CONTAINER_REPOSITORY_PREFIX}/pcs-config-dotnet:${PCS_DOCKER_TAG}
     restart: always
     depends_on:
       - storageadapter-svc

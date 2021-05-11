@@ -2,6 +2,14 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "containerRepositoryPrefix":
+    {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "The name of the container repository (Docker Hub, Azure Container Registry, etc.) used to store IoT Simulation component containers"
+      }
+    },
     "deploymentRegion": {
       "type": "string",
       "defaultValue": "eastus",
@@ -11,9 +19,9 @@
     },
     "solutionTemplateRepository": {
       "type": "string",
-      "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/', parameters('pcsReleaseVersion'), '/arm-deployment/devicesimulation')]",
+      "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/', parameters('pcsReleaseVersion'), '/vm-setup')]",
       "metadata": {
-        "description": "The folder where ARM template and setup scripts will be downloaded from during the VM setup (use the parent of 'armtemplate' and 'single-vm' folders, e.g. https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/master/arm-deployment/devicesimulation)"
+        "description": "The folder where setup scripts will be downloaded from during the VM setup"
       }
     },
     "pcsDockerTag": {
@@ -187,7 +195,7 @@
     },
     "vmSetupScriptUri": {
       "type": "string",
-      "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/', parameters('pcsReleaseVersion'), '/arm-deployment/devicesimulation/single-vm/setup-wrapper.sh')]",
+      "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/azure-iot-pcs-device-simulation/', parameters('pcsReleaseVersion'), '/vm-setup/setup-wrapper.sh')]",
       "metadata": {
         "description": "The URL of the script used for VM setup"
       }
@@ -688,7 +696,7 @@
                     "fileUris": [
                       "[parameters('vmSetupScriptUri')]"
                     ],
-                    "commandToExecute": "[concat('bash setup-wrapper.sh --log-level Info --hostname ', '\"', variables('vmFQDN'), '\"', ' --resource-group-location ', '\"', variables('location'), '\"',  ' --vmss-name ', '\"', parameters('vmssName'), '\"', ' --docdb-connstring ', '\"', 'AccountEndpoint=', reference(variables('cosmosDBResourceId')).documentEndpoint, ';AccountKey=', listkeys(variables('cosmosDBResourceId'), variables('cosmosDBApiVersion')).primaryMasterKey, ';', '\"', ' --ssl-certificate ', '\"', parameters('remoteEndpointCertificate'), '\"', ' --ssl-certificate-key ', '\"', parameters('remoteEndpointCertificateKey'), '\"', ' --auth-type aad ', ' --auth-audience ', '\"', parameters('aadClientId'), '\"', ' --aad-appid ', '\"', parameters('aadClientId'), '\"', ' --aad-tenant ', '\"', parameters('aadTenantId'), '\"', ' --auth-issuer ', '\"', 'https://sts.windows.net/', parameters('aadTenantId'), '/', '\"', ' --aad-instance ', '\"', parameters('aadInstance'), '\"', ' --resource-group ', '\"', parameters('solutionName'), '\"', ' --release-version ', concat('\"', parameters('pcsReleaseVersion'), '\"'), ' --solution-type ', '\"', parameters('solutionType'), '\"', ' --deployment-id ', '\"', parameters('deploymentId'), '\"',  ' --storage-connstring ', '\"', 'DefaultEndpointsProtocol=https;AccountName=', parameters('storageName'), ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value, '\"', ' --docdb-name ', '\"', parameters('documentDBName'), '\"', ' --solution-name ', '\"', parameters('solutionName'), '\"', ' --solution-setup-url ', '\"', parameters('solutionTemplateRepository'), '\"', ' --docker-tag ', '\"', parameters('pcsDockerTag'), '\"', ' --subscription-domain ', '\"', parameters('domain'), '\"', ' --subscription-id ',  concat('\"', subscription().subscriptionId, '\"'),' --aad-sp-client-id ', concat('\"', parameters('aadClientServicePrincipalId'), '\"'), ' --aad-app-secret ', concat('\"', parameters('aadClientSecret'), '\"'), ' --iothub-name ', concat('\"', parameters('iotHubName'), '\"'), ' --iothub-sku ', parameters('iotHubSku'), ' --iothub-tier ', parameters('iotHubTier'), ' --iothub-units ', parameters('iotHubUnits') ,' --iothub-connstring ', concat('\"', 'HostName=', reference(variables('iotHubResourceId')).hostName, ';SharedAccessKeyName=', variables('iotHubKeyName'), ';SharedAccessKey=', listkeys(variables('iotHubKeyResource'), variables('iotHubApiVersion')).primaryKey, '\"'), ' --cloud-type ', concat('\"', parameters('cloudType'), '\"'), ' --app-insights-ikey ', concat('\"', parameters('applicationInsightsInstrumentationKey'), '\"'))]"
+                    "commandToExecute": "[concat('bash setup-wrapper.sh --log-level Info --hostname ', '\"', variables('vmFQDN'), '\"', ' --resource-group-location ', '\"', variables('location'), '\"',  ' --vmss-name ', '\"', parameters('vmssName'), '\"', ' --docdb-connstring ', '\"', 'AccountEndpoint=', reference(variables('cosmosDBResourceId')).documentEndpoint, ';AccountKey=', listkeys(variables('cosmosDBResourceId'), variables('cosmosDBApiVersion')).primaryMasterKey, ';', '\"', ' --ssl-certificate ', '\"', parameters('remoteEndpointCertificate'), '\"', ' --ssl-certificate-key ', '\"', parameters('remoteEndpointCertificateKey'), '\"', ' --auth-type aad ', ' --auth-audience ', '\"', parameters('aadClientId'), '\"', ' --aad-appid ', '\"', parameters('aadClientId'), '\"', ' --aad-tenant ', '\"', parameters('aadTenantId'), '\"', ' --auth-issuer ', '\"', 'https://sts.windows.net/', parameters('aadTenantId'), '/', '\"', ' --aad-instance ', '\"', parameters('aadInstance'), '\"', ' --resource-group ', '\"', parameters('solutionName'), '\"', ' --release-version ', concat('\"', parameters('pcsReleaseVersion'), '\"'), ' --solution-type ', '\"', parameters('solutionType'), '\"', ' --deployment-id ', '\"', parameters('deploymentId'), '\"',  ' --storage-connstring ', '\"', 'DefaultEndpointsProtocol=https;AccountName=', parameters('storageName'), ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value, '\"', ' --docdb-name ', '\"', parameters('documentDBName'), '\"', ' --solution-name ', '\"', parameters('solutionName'), '\"', ' --solution-setup-url ', '\"', parameters('solutionTemplateRepository'), '\"', ' --docker-tag ', '\"', parameters('pcsDockerTag'), '\"', ' --subscription-domain ', '\"', parameters('domain'), '\"', ' --subscription-id ',  concat('\"', subscription().subscriptionId, '\"'),' --aad-sp-client-id ', concat('\"', parameters('aadClientServicePrincipalId'), '\"'), ' --aad-app-secret ', concat('\"', parameters('aadClientSecret'), '\"'), ' --iothub-name ', concat('\"', parameters('iotHubName'), '\"'), ' --iothub-sku ', parameters('iotHubSku'), ' --iothub-tier ', parameters('iotHubTier'), ' --iothub-units ', parameters('iotHubUnits') ,' --iothub-connstring ', concat('\"', 'HostName=', reference(variables('iotHubResourceId')).hostName, ';SharedAccessKeyName=', variables('iotHubKeyName'), ';SharedAccessKey=', listkeys(variables('iotHubKeyResource'), variables('iotHubApiVersion')).primaryKey, '\"'), ' --cloud-type ', concat('\"', parameters('cloudType'), '\"'), ' --app-insights-ikey ', concat('\"', parameters('applicationInsightsInstrumentationKey'), '\"'), ' --container-repository-prefix ', '\"', parameters('containerRepositoryPrefix'),'\"')]"
                   }
                 }
               }

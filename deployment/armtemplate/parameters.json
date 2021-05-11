@@ -16,5 +16,14 @@
   },
   "adminPassword": {
     "value": "{ The Azure VM password. See: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq#what-are-the-password-requirements-when-creating-a-vm }"
+  },
+  "containerRepositoryPrefix": {
+    "value": "{ Docker container repository name. Ex: myRepository }"
+  },
+  "pcsReleaseVersion": {
+    "value": "DS-2.0.10"
+  },
+  "pcsDockerTag": {
+    "value": "{ The Docker tag value used when running the BuildAndPush script. }"
   }
 }
