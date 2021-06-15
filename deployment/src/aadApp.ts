@@ -39,6 +39,10 @@ export async function createAadApp(config: IArmTemplateParameters, creds: creden
 
         // Create the AAD app
         appCreationResponse = await _client.api('/applications').post(applicationCreateParameters);
+        if(!appCreationResponse.appId){
+            throw new Error('Failed to register AAD application. Verify that you have sufficient subscription privileges to create AAD application registrations.');
+        }
+        
         console.log(`AAD application '${appCreationResponse.displayName}' created. Setting credentials...`);
 
         // Set credentials for the app
@@ -50,7 +54,7 @@ export async function createAadApp(config: IArmTemplateParameters, creds: creden
 
     }catch(ex){
 
-        console.log(`Error while attempting to register an AAD application with the name '${config.solutionName.value}'...`);
+        console.log(`Error while attempting to register an AAD application with the name '${config.solutionName.value}'. ${ex.message ?? ''}`);
         throw new Error(ex);
 
     }
