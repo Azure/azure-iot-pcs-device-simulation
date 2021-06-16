@@ -399,7 +399,8 @@
             },
             "tags": {
                 "IotSuiteType": "[parameters('solutionType')]"
-            }
+            },
+            "enableHttpsTrafficOnly": true
         },
       {
         "comments": "Security rules used for the VM network interface",
